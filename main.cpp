@@ -1,9 +1,10 @@
 #include <iostream>
 #include <sstream>
 
-#include "FileManagement.h"
-#include "Config.h"
-#include "ConfigReader.h"
+#include "filemanagement.h"
+#include "config.h"
+#include "configreader.h"
+#include "datareader.h"
 
 using namespace std;
 
@@ -51,6 +52,14 @@ int main(int argc, char** argv)
     catch (...) {
         cerr << "Unknown error while reading the configuration." << endl;
         return 5;
+    }
+
+    DataReader dataReader;
+    TransactionList transactions = dataReader.readTransactions(input);
+
+    for (const auto &transaction : transactions)
+    {
+        cout << transaction << endl;
     }
 
     return 0;
