@@ -4,8 +4,7 @@
 #include <list>
 #include "transaction.h"
 #include "filemanagement.h"
-
-typedef std::list<Transaction> TransactionList;
+#include "Types.h"
 
 using namespace std;
 

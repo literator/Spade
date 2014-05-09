@@ -5,6 +5,7 @@
 #include "config.h"
 #include "configreader.h"
 #include "datareader.h"
+#include "horizontaltoverticalconverter.h"
 
 using namespace std;
 
@@ -57,9 +58,12 @@ int main(int argc, char** argv)
     DataReader dataReader;
     TransactionList transactions = dataReader.readTransactions(input);
 
-    for (const auto &transaction : transactions)
+    HorizontalToVerticalConverter converter;
+    IdListItems idListItems = converter.convertTransactions(transactions);
+
+    for (const IdListItemPtr itemPtr : idListItems)
     {
-        cout << transaction << endl;
+        cout << *itemPtr << endl;
     }
 
     return 0;
