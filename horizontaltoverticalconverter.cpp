@@ -1,5 +1,6 @@
 #include "horizontaltoverticalconverter.h"
 #include "transaction.h"
+#include "idlistitem.h"
 #include <algorithm>
 
 HorizontalToVerticalConverter::HorizontalToVerticalConverter() {}

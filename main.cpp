@@ -5,7 +5,9 @@
 #include "config.h"
 #include "configreader.h"
 #include "datareader.h"
+#include "idlistitem.h"
 #include "horizontaltoverticalconverter.h"
+#include "onefrequentitemscalculator.h"
 
 using namespace std;
 
@@ -61,7 +63,10 @@ int main(int argc, char** argv)
     HorizontalToVerticalConverter converter;
     IdListItems idListItems = converter.convertTransactions(transactions);
 
-    for (const IdListItemPtr itemPtr : idListItems)
+    OneFrequentItemsCalculator ofiCalculator(config.minSupport());
+    IdListItems oneFrequentItems = ofiCalculator.oneFrequentItems(idListItems);
+
+    for (const IdListItemPtr itemPtr : oneFrequentItems)
     {
         cout << *itemPtr << endl;
     }

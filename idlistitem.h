@@ -1,14 +1,11 @@
 #ifndef IDLISTITEM_H
 #define IDLISTITEM_H
 
-#include "Types.h"
+#include "types.h"
 #include <list>
 #include <iostream>
 
 using namespace std;
-
-typedef pair<SequenceID, EventID> IdListPair;
-typedef list<IdListPair> IdListPairs;
 
 class IdListItem
 {
@@ -16,6 +13,8 @@ private:
     Item _item;
     IdListPairs _idListPairs;
 public:
+    unsigned int support;
+
     IdListItem(Item);
     IdListItem(IdListItem *);
     IdListItem(const IdListItem &);
@@ -28,7 +27,7 @@ public:
 
     friend ostream& operator<<(ostream& os, const IdListItem& item)
     {
-        os << "item: " << item.item() << ", pairs: ";
+        os << "item: " << item.item() << ", support: " << item.support << ", pairs: ";
         for(const auto &pair : item.pairs())
         {
             os << "[" << pair.first << "," << pair.second << "], ";

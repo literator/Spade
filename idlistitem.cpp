@@ -1,12 +1,10 @@
 #include "idlistitem.h"
 
-IdListItem::IdListItem(Item item) : _item(item), _idListPairs(IdListPairs())
-{
-
-}
+IdListItem::IdListItem(Item item) : support(0), _item(item), _idListPairs(IdListPairs()) {}
 
 IdListItem::IdListItem(IdListItem *item)
 {
+    this->support = item->support;
     this->_item = item->_item;
     this->_idListPairs = item->_idListPairs;
 }
