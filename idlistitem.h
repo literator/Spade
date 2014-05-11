@@ -1,34 +1,37 @@
 #ifndef IDLISTITEM_H
 #define IDLISTITEM_H
 
-#include "types.h"
 #include <list>
 #include <iostream>
+#include "types.h"
+#include "itemset.h"
 
 using namespace std;
 
-class IdListItem
+class IdListItemSet
 {
 private:
-    Item _item;
+    ItemSet _itemSet;
     IdListPairs _idListPairs;
 public:
     unsigned int support;
 
-    IdListItem(Item);
-    IdListItem(IdListItem *);
-    IdListItem(const IdListItem &);
-    ~IdListItem();
+    IdListItemSet();
+    IdListItemSet(Item);
+    IdListItemSet(ItemSet);
+    IdListItemSet(IdListItemSet *);
+    IdListItemSet(const IdListItemSet &);
+    ~IdListItemSet();
 
-    inline Item item() const { return _item; }
+    ItemSet itemSet() const { return _itemSet; }
 
     void addPair(IdListPair pair);
-    inline IdListPairs pairs() const { return _idListPairs; }
+    IdListPairs pairs() const { return _idListPairs; }
 
-    friend ostream& operator<<(ostream& os, const IdListItem& item)
+    friend ostream& operator<<(ostream& os, const IdListItemSet& idListItemSet)
     {
-        os << "item: " << item.item() << ", support: " << item.support << ", pairs: ";
-        for(const auto &pair : item.pairs())
+        os << idListItemSet.itemSet() << ", support: " << idListItemSet.support << ", pairs: ";
+        for(const auto &pair : idListItemSet.pairs())
         {
             os << "[" << pair.first << "," << pair.second << "], ";
         }

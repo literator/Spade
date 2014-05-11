@@ -5,12 +5,12 @@
 
 OneFrequentItemsCalculator::OneFrequentItemsCalculator(unsigned int minSupport) : _minSupport(minSupport) {}
 
-IdListItems OneFrequentItemsCalculator::oneFrequentItems(IdListItems &allItems)
+IdListItemSets OneFrequentItemsCalculator::oneFrequentItems(IdListItemSets &allItems)
 {
     vector<SequenceID> checkedSequencesIDs;
-    IdListItems oneFrequentItems;
+    IdListItemSets oneFrequentItems;
 
-    for(IdListItemPtr itemPtr : allItems)
+    for(IdListItemSetPtr itemPtr : allItems)
     {
         IdListPairs pairs = itemPtr->pairs();
         for(IdListPair &pair : pairs)

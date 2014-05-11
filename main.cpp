@@ -61,12 +61,12 @@ int main(int argc, char** argv)
     TransactionList transactions = dataReader.readTransactions(input);
 
     HorizontalToVerticalConverter converter;
-    IdListItems idListItems = converter.convertTransactions(transactions);
+    IdListItemSets idListItems = converter.convertTransactions(transactions);
 
     OneFrequentItemsCalculator ofiCalculator(config.minSupport());
-    IdListItems oneFrequentItems = ofiCalculator.oneFrequentItems(idListItems);
+    IdListItemSets oneFrequentItems = ofiCalculator.oneFrequentItems(idListItems);
 
-    for (const IdListItemPtr itemPtr : oneFrequentItems)
+    for (const IdListItemSetPtr itemPtr : oneFrequentItems)
     {
         cout << *itemPtr << endl;
     }

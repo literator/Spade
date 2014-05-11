@@ -10,7 +10,7 @@ class HorizontalToVerticalConverter
 {
 public:
     HorizontalToVerticalConverter();
-    IdListItems convertTransactions(TransactionList &list);
+    IdListItemSets convertTransactions(TransactionList &list);
 };
 
 #endif // HORIZONTALTOVERTICALCONVERTER_H

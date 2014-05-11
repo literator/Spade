@@ -5,22 +5,25 @@
 
 HorizontalToVerticalConverter::HorizontalToVerticalConverter() {}
 
-IdListItems HorizontalToVerticalConverter::convertTransactions(TransactionList &transactionList)
+IdListItemSets HorizontalToVerticalConverter::convertTransactions(TransactionList &transactionList)
 {
-    IdListItems idListItems;
+    IdListItemSets idListItems;
 
     for(const Transaction transaction : transactionList)
     {
         for(const Item item : transaction.items())
         {
             auto idListItemPtrIterator = find_if(begin(idListItems),
-                                              end(idListItems),
-                                              [&](const IdListItemPtr itemPtr) { return itemPtr->item() == item; });
+                                                 end(idListItems),
+                                                 [&](const IdListItemSetPtr itemPtr)
+            {
+                return itemPtr->itemSet().itemExists(item);
+            });
 
             bool itemAlreadyExists = idListItemPtrIterator != end(idListItems);
             auto itemPtr = itemAlreadyExists ?
                         *idListItemPtrIterator :
-                        make_shared<IdListItem>(new IdListItem(item));
+                        make_shared<IdListItemSet>(new IdListItemSet(item));
 
             IdListPair pair = make_pair<SequenceID, EventID>(transaction.sequenceID(),
                                                              transaction.eventID());

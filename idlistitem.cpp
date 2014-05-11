@@ -1,26 +1,34 @@
 #include "idlistitem.h"
+#include "itemset.h"
 
-IdListItem::IdListItem(Item item) : support(0), _item(item), _idListPairs(IdListPairs()) {}
+IdListItemSet::IdListItemSet() : support(0), _itemSet(ItemSet()), _idListPairs(IdListPairs()) {}
 
-IdListItem::IdListItem(IdListItem *item)
+IdListItemSet::IdListItemSet(Item item) : support(0), _itemSet(ItemSet()), _idListPairs(IdListPairs())
+{
+    _itemSet.addItem(item);
+}
+
+IdListItemSet::IdListItemSet(ItemSet itemSet) : support(0), _itemSet(itemSet), _idListPairs(IdListPairs()) {}
+
+IdListItemSet::IdListItemSet(IdListItemSet *item)
 {
     this->support = item->support;
-    this->_item = item->_item;
+    this->_itemSet = item->_itemSet;
     this->_idListPairs = item->_idListPairs;
 }
 
-IdListItem::IdListItem(const IdListItem &item)
+IdListItemSet::IdListItemSet(const IdListItemSet &item)
 {
-    this->_item = item._item;
+    this->_itemSet = item._itemSet;
     this->_idListPairs = item._idListPairs;
 }
 
-IdListItem::~IdListItem()
+IdListItemSet::~IdListItemSet()
 {
     _idListPairs.clear();
 }
 
-void IdListItem::addPair(IdListPair pair)
+void IdListItemSet::addPair(IdListPair pair)
 {
     _idListPairs.push_back(pair);
 }

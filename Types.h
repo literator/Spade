@@ -7,25 +7,28 @@
 using namespace std;
 
 class Transaction;
-class IdListItem;
+class ItemSet;
+class IdListItemSet;
 
 typedef unsigned int uint;
-typedef unsigned int Item;
-typedef unsigned int EventID;
-typedef unsigned int SequenceID;
-typedef unsigned int MapValue;
+typedef uint EventID;
+typedef uint Item;
+typedef uint SequenceID;
+typedef uint MapValue;
+
+typedef list<Item> ItemList;
 typedef list<Transaction> TransactionList;
 
 typedef pair<SequenceID, EventID> IdListPair;
 typedef list<IdListPair> IdListPairs;
-typedef shared_ptr<IdListItem> IdListItemPtr;
-typedef list<IdListItemPtr> IdListItems;
+typedef shared_ptr<IdListItemSet> IdListItemSetPtr;
+typedef list<IdListItemSetPtr> IdListItemSets;
+
+typedef void(*LineProcessor)(const string&);
 
 // Not directly related
 
 typedef list<list<Transaction> > SequenceData;
-
-typedef void(*LineProcessor)(const string&);
 
 enum JoinTiming{SIMULTANEOUS, BEFORE, AFTER};
 

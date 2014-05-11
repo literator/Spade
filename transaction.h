@@ -3,10 +3,9 @@
 
 #include <list>
 #include <iostream>
-#include "Types.h"
+#include "types.h"
 
 using namespace std;
-typedef list<Item> ItemList;
 
 class Transaction
 {

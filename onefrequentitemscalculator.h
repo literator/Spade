@@ -11,7 +11,7 @@ private:
     unsigned int _minSupport;
 public:
     OneFrequentItemsCalculator(unsigned int minSupport);
-    IdListItems oneFrequentItems(IdListItems &allItems);
+    IdListItemSets oneFrequentItems(IdListItemSets &allItems);
 };
 
 #endif // ONEFREQUENTITEMSCALCULATOR_H
