@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 
+#include "inputprocessor.h"
 #include "filemanagement.h"
 #include "config.h"
 #include "configreader.h"
@@ -13,48 +14,34 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    stringstream ss;
-    if (argc != 3) {
-        ss << "Invalid parameter count.\nThe command to run the program  - \"" << argv[0] << " <input file path> <result file path>\".";
-        cerr << ss.str() << endl;
-        return 1;
-    }
-
     InputReader input;
     OutputWriter output;
     Config config;
 
-    try {
+    InputProcessor processor;
+
+    processor.addStep(InputBooleanProcessStep([&] () {
+        cerr << "Invalid parameter count.\nThe command to run the program  - \"" << argv[0] << " <input file path> <result file path>\"." << endl;
+    }, InputErrorReturnCode::WrongParamtersCount, argc != 3));
+
+    processor.addStep(InputTryCatchProcessStep([&] () {
         input.openFile(string(argv[1]));
-    }
-    catch (string message) {
-        ss << "Error opening input file: " << message;
-        cerr << ss.str() << endl;
-        return 2;
-    }
+    }, InputErrorReturnCode::OpeningInputFile));
 
-    try {
+    processor.addStep(InputTryCatchProcessStep([&] () {
         output.openFile(string(argv[2]));
-    }
-    catch (string message) {
-        ss << "Error opening output file: " << message;
-        cerr << ss.str() << endl;
-        return 3;
-    }
+    }, InputErrorReturnCode::OpeningOutputFile));
 
-    try {
+    processor.addStep(InputTryCatchProcessStep([&] () {
         ConfigReader cr = ConfigReader::getInstance();
         cr.readConfig(input);
         config = cr.getConfig();
-    }
-    catch (string message) {
-        ss << "Error reading configuration: " << message;
-        cerr << ss.str() << endl;
-        return 4;
-    }
-    catch (...) {
-        cerr << "Unknown error while reading the configuration." << endl;
-        return 5;
+    }, InputErrorReturnCode::ReadingConfiguration));
+
+    InputErrorReturnCode status = processor.processSteps();
+    if(status != InputErrorReturnCode::NoError)
+    {
+        return (int)status;
     }
 
     DataReader dataReader;
