@@ -1,7 +1,6 @@
 #include <iostream>
 #include <sstream>
 
-#include "inputprocessor.h"
 #include "filemanagement.h"
 #include "config.h"
 #include "configreader.h"
@@ -9,6 +8,9 @@
 #include "idlistitem.h"
 #include "horizontaltoverticalconverter.h"
 #include "onefrequentitemscalculator.h"
+#include "inputprocessor.h"
+#include "inputbooleanprocessstep.h"
+#include "inputtrycatchprocessstep.h"
 
 using namespace std;
 
@@ -18,27 +20,27 @@ int main(int argc, char** argv)
     OutputWriter output;
     Config config;
 
-    InputProcessor processor;
+    auto processor = make_shared<InputProcessor>(new InputProcessor());
 
-    processor.addStep(InputBooleanProcessStep([&] () {
+    processor->addStep(InputBooleanProcessStep([&] () {
         cerr << "Invalid parameter count.\nThe command to run the program  - \"" << argv[0] << " <input file path> <result file path>\"." << endl;
     }, InputErrorReturnCode::WrongParamtersCount, argc != 3));
 
-    processor.addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(InputTryCatchProcessStep([&] () {
         input.openFile(string(argv[1]));
     }, InputErrorReturnCode::OpeningInputFile));
 
-    processor.addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(InputTryCatchProcessStep([&] () {
         output.openFile(string(argv[2]));
     }, InputErrorReturnCode::OpeningOutputFile));
 
-    processor.addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(InputTryCatchProcessStep([&] () {
         ConfigReader cr = ConfigReader::getInstance();
         cr.readConfig(input);
         config = cr.getConfig();
     }, InputErrorReturnCode::ReadingConfiguration));
 
-    InputErrorReturnCode status = processor.processSteps();
+    InputErrorReturnCode status = processor->processSteps();
     if(status != InputErrorReturnCode::NoError)
     {
         return (int)status;

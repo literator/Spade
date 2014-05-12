@@ -2,8 +2,6 @@
 #define INPUTPROCESSOR_H
 
 #include "inputprocessstep.h"
-#include "inputbooleanprocessstep.h"
-#include "inputtrycatchprocessstep.h"
 
 #include <list>
 
@@ -15,6 +13,7 @@ private:
     list<InputProcessStep> _steps;
 public:
     InputProcessor();
+    InputProcessor(InputProcessor *);
 
     void addStep(const InputProcessStep step);
 
