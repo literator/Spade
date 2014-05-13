@@ -1,5 +1,4 @@
-#ifndef INPUTPROCESSOR_H
-#define INPUTPROCESSOR_H
+#pragma once
 
 #include "inputprocessstep.h"
 
@@ -10,14 +9,13 @@ using namespace std;
 class InputProcessor
 {
 private:
-    list<InputProcessStep> _steps;
+    list<InputProcessStep *> _steps;
 public:
     InputProcessor();
     InputProcessor(InputProcessor *);
+    ~InputProcessor();
 
-    void addStep(const InputProcessStep step);
+    void addStep(InputProcessStep *step);
 
     InputErrorReturnCode processSteps();
 };
-
-#endif // INPUTPROCESSOR_H

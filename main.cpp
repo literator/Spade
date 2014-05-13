@@ -21,19 +21,19 @@ int main(int argc, char** argv)
 
     auto processor = make_shared<InputProcessor>(new InputProcessor());
 
-    processor->addStep(InputBooleanProcessStep([&] () {
+    processor->addStep(new InputBooleanProcessStep([&] () {
         cerr << "Invalid parameter count.\nThe command to run the program  - \"" << argv[0] << " <input file path> <result file path>\"." << endl;
     }, InputErrorReturnCode::WrongParametersCount, argc != 3));
 
-    processor->addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(new InputTryCatchProcessStep([&] () {
         input.openFile(string(argv[1]));
     }, InputErrorReturnCode::OpeningInputFile));
 
-    processor->addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(new InputTryCatchProcessStep([&] () {
         output.openFile(string(argv[2]));
     }, InputErrorReturnCode::OpeningOutputFile));
 
-    processor->addStep(InputTryCatchProcessStep([&] () {
+    processor->addStep(new InputTryCatchProcessStep([&] () {
         ConfigReader cr = ConfigReader::getInstance();
         cr.readConfig(input);
         config = cr.getConfig();
