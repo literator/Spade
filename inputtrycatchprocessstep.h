@@ -1,8 +1,8 @@
-#ifndef INPUTTRYCATCHPROCESSSTEP_H
-#define INPUTTRYCATCHPROCESSSTEP_H
+#pragma once
 
 #include "inputprocessstep.h"
 #include <iostream>
+
 using namespace std;
 
 class InputTryCatchProcessStep : public InputProcessStep
@@ -24,5 +24,3 @@ public:
         return InputErrorReturnCode::NoError;
     }
 };
-
-#endif // INPUTTRYCATCHPROCESSSTEP_H

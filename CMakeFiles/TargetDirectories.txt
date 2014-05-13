@@ -1,0 +1,3 @@
+/Users/maciejoczko/PrivateRepositories/Spade/CMakeFiles/ALL_BUILD.dir
+/Users/maciejoczko/PrivateRepositories/Spade/CMakeFiles/Spade.dir
+/Users/maciejoczko/PrivateRepositories/Spade/CMakeFiles/ZERO_CHECK.dir

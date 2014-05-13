@@ -1,5 +1,4 @@
-#ifndef HORIZONTALTOVERTICALCONVERTER_H
-#define HORIZONTALTOVERTICALCONVERTER_H
+#pragma once
 
 #include "types.h"
 #include <list>
@@ -12,5 +11,3 @@ public:
     HorizontalToVerticalConverter();
     IdListItemSets convertTransactions(TransactionList &list);
 };
-
-#endif // HORIZONTALTOVERTICALCONVERTER_H

@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0F5E94613CFD4881B034C49B /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 33CEFF9D3BFB4140B403192E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				28132401F6EC4104A796B609 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		978B988BBBA64CA9BA7AAB57 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 21955AC4EF08418B8FB914E4 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				EF322F72ABA94DE69F67710B /* CMake Rules */,
+			);
+			dependencies = (
+				D1446899AEA34B3794B3F1FB /* PBXTargetDependency */,
+				4104C262C7F44F9793114312 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		01743D71A40648F6B8C8F40D /* horizontaltoverticalconverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6A0E162ED08483E96957287 /* horizontaltoverticalconverter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		03B5A20DE6174501A5F53B7A /* datareader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB77FCCB5004855A76B2816 /* datareader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19ABB8D621A640FCA767EDF2 /* transaction.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC326F2E1194BD18E05E02D /* itemset.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923EA216C92C4FECB7EE0FE7 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		80009806B91E42228C25819A /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737F0BDD42144D869BEB630D /* utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FA06D3C482461EBD025D39 /* filemanagement.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD004F082814285943CD809 /* inputprocessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B4A5EA38A7B34D849B8AA830 /* inputprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BA137517EEEF4926AE4CB573 /* inputbooleanprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C0E080FEA9F54B6D9F80B91A /* configreader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8184C36E692A4811B43A994E /* configreader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E07C8E9E372B40FA8FE72A8A /* idlistitem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6498681A80F64C1AAB24A955 /* idlistitem.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E1F4DE421FED4A02AB2F1F66 /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51A6ECE1C7944A03B3B164B7 /* config.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E829E8ED7EFC4FFFA5B5730C /* onefrequentitemscalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52DF97D4794341F89E05F440 /* onefrequentitemscalculator.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		F16960D0B62540AFA16276E4 /* inputtrycatchprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E2181F8152B4C5BBB5FCED6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E88B4D29DF554B14A367957C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5E94613CFD4881B034C49B;
+			remoteInfo = ZERO_CHECK;
+		};
+		304F5D9E30D44309869F673B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E88B4D29DF554B14A367957C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D998B0EC58431C8374B3AD;
+			remoteInfo = Spade;
+		};
+		F734DCAD4A5E413BBF19232A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E88B4D29DF554B14A367957C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5E94613CFD4881B034C49B;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DB77FCCB5004855A76B2816 /* datareader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = datareader.cpp; sourceTree = SOURCE_ROOT; };
+		1248B1C7FEE94D3DBF57F383 /* Spade */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Spade; sourceTree = BUILT_PRODUCTS_DIR; };
+		19ABB8D621A640FCA767EDF2 /* transaction.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = transaction.cpp; sourceTree = SOURCE_ROOT; };
+		2BD004F082814285943CD809 /* inputprocessor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputprocessor.cpp; sourceTree = SOURCE_ROOT; };
+		51A6ECE1C7944A03B3B164B7 /* config.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = config.cpp; sourceTree = SOURCE_ROOT; };
+		52DF97D4794341F89E05F440 /* onefrequentitemscalculator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = onefrequentitemscalculator.cpp; sourceTree = SOURCE_ROOT; };
+		617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputprocessstep.cpp; sourceTree = SOURCE_ROOT; };
+		6498681A80F64C1AAB24A955 /* idlistitem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = idlistitem.cpp; sourceTree = SOURCE_ROOT; };
+		737F0BDD42144D869BEB630D /* utilities.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = utilities.cpp; sourceTree = SOURCE_ROOT; };
+		7DC326F2E1194BD18E05E02D /* itemset.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = itemset.cpp; sourceTree = SOURCE_ROOT; };
+		8184C36E692A4811B43A994E /* configreader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = configreader.cpp; sourceTree = SOURCE_ROOT; };
+		923EA216C92C4FECB7EE0FE7 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputbooleanprocessstep.cpp; sourceTree = SOURCE_ROOT; };
+		98FA06D3C482461EBD025D39 /* filemanagement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = filemanagement.cpp; sourceTree = SOURCE_ROOT; };
+		B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputtrycatchprocessstep.cpp; sourceTree = SOURCE_ROOT; };
+		E6A0E162ED08483E96957287 /* horizontaltoverticalconverter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = horizontaltoverticalconverter.cpp; sourceTree = SOURCE_ROOT; };
+		EA699651C41245B89B1EFF5E /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		10F0D08BD3CA4976AE157B52 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				C0B0027566D44C71AC70CF36 /* CMake Rules */,
+				EA699651C41245B89B1EFF5E /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		12E04B539C1C4ED28A645E0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2B7D4AD04A4D42FA873C0D03 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF7C23897E134D1C8570FFE6 /* ALL_BUILD */,
+				B618F58B33EA4383BFA1A790 /* Spade */,
+				10F0D08BD3CA4976AE157B52 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		2D9C2BF9C7FB4776BF95089E /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		5EA9CE568EE743EF97CCA1DA /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				51A6ECE1C7944A03B3B164B7 /* config.cpp */,
+				8184C36E692A4811B43A994E /* configreader.cpp */,
+				0DB77FCCB5004855A76B2816 /* datareader.cpp */,
+				98FA06D3C482461EBD025D39 /* filemanagement.cpp */,
+				E6A0E162ED08483E96957287 /* horizontaltoverticalconverter.cpp */,
+				6498681A80F64C1AAB24A955 /* idlistitem.cpp */,
+				96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */,
+				2BD004F082814285943CD809 /* inputprocessor.cpp */,
+				617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */,
+				B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */,
+				7DC326F2E1194BD18E05E02D /* itemset.cpp */,
+				923EA216C92C4FECB7EE0FE7 /* main.cpp */,
+				52DF97D4794341F89E05F440 /* onefrequentitemscalculator.cpp */,
+				19ABB8D621A640FCA767EDF2 /* transaction.cpp */,
+				737F0BDD42144D869BEB630D /* utilities.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		AF7C23897E134D1C8570FFE6 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C2BF9C7FB4776BF95089E /* CMake Rules */,
+				EA699651C41245B89B1EFF5E /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		B618F58B33EA4383BFA1A790 /* Spade */ = {
+			isa = PBXGroup;
+			children = (
+				5EA9CE568EE743EF97CCA1DA /* Source Files */,
+				EA699651C41245B89B1EFF5E /* CMakeLists.txt */,
+			);
+			name = Spade;
+			sourceTree = "<group>";
+		};
+		C0B0027566D44C71AC70CF36 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		C8DBEDEBD351490690E28D2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1248B1C7FEE94D3DBF57F383 /* Spade */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E26C3F29658C4310B0CB8D23 = {
+			isa = PBXGroup;
+			children = (
+				2B7D4AD04A4D42FA873C0D03 /* Sources */,
+				12E04B539C1C4ED28A645E0F /* Resources */,
+				C8DBEDEBD351490690E28D2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3D998B0EC58431C8374B3AD /* Spade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162BAD03B96447A8A274592F /* Build configuration list for PBXNativeTarget "Spade" */;
+			buildPhases = (
+				D34C390F7D204A34BC03AA81 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CC7EB211ADC4AB89401FEFC /* PBXTargetDependency */,
+			);
+			name = Spade;
+			productName = Spade;
+			productReference = 1248B1C7FEE94D3DBF57F383 /* Spade */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E88B4D29DF554B14A367957C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = DBFB4CE01CE946FC8B0E9E99 /* Build configuration list for PBXProject "Spade" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E26C3F29658C4310B0CB8D23;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				978B988BBBA64CA9BA7AAB57 /* ALL_BUILD */,
+				D3D998B0EC58431C8374B3AD /* Spade */,
+				0F5E94613CFD4881B034C49B /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28132401F6EC4104A796B609 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/maciejoczko/PrivateRepositories/Spade -f /Users/maciejoczko/PrivateRepositories/Spade/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		EF322F72ABA94DE69F67710B /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/maciejoczko/PrivateRepositories/Spade -f /Users/maciejoczko/PrivateRepositories/Spade/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D34C390F7D204A34BC03AA81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F4DE421FED4A02AB2F1F66 /* config.cpp in Sources */,
+				C0E080FEA9F54B6D9F80B91A /* configreader.cpp in Sources */,
+				03B5A20DE6174501A5F53B7A /* datareader.cpp in Sources */,
+				94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */,
+				01743D71A40648F6B8C8F40D /* horizontaltoverticalconverter.cpp in Sources */,
+				E07C8E9E372B40FA8FE72A8A /* idlistitem.cpp in Sources */,
+				BA137517EEEF4926AE4CB573 /* inputbooleanprocessstep.cpp in Sources */,
+				B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */,
+				B4A5EA38A7B34D849B8AA830 /* inputprocessstep.cpp in Sources */,
+				F16960D0B62540AFA16276E4 /* inputtrycatchprocessstep.cpp in Sources */,
+				2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */,
+				6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */,
+				E829E8ED7EFC4FFFA5B5730C /* onefrequentitemscalculator.cpp in Sources */,
+				20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */,
+				80009806B91E42228C25819A /* utilities.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4104C262C7F44F9793114312 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F5E94613CFD4881B034C49B /* ZERO_CHECK */;
+			targetProxy = 1E2181F8152B4C5BBB5FCED6 /* PBXContainerItemProxy */;
+		};
+		7CC7EB211ADC4AB89401FEFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F5E94613CFD4881B034C49B /* ZERO_CHECK */;
+			targetProxy = F734DCAD4A5E413BBF19232A /* PBXContainerItemProxy */;
+		};
+		D1446899AEA34B3794B3F1FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D998B0EC58431C8374B3AD /* Spade */;
+			targetProxy = 304F5D9E30D44309869F673B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		021FA026A06D467FB8A1C0A8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_PEDANTIC = YES;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Spade;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		20ACF391CF9A45EFB34AAFD0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/maciejoczko/PrivateRepositories/Spade;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		264C15DF6B38453F880D1029 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+			};
+			name = MinSizeRel;
+		};
+		3A2BD85734244785A3C759A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_PEDANTIC = YES;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Spade;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		471DC3AB43C54B90A1E10C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		59FA557840394C90B6950F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_PEDANTIC = YES;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Spade;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		68043F9BFE284BD390690AAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		768ED0B5DC0742F4821D1B16 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/maciejoczko/PrivateRepositories/Spade;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		7F14568F61C64C0EB58ECE71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/maciejoczko/PrivateRepositories/Spade;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		87377F141B434002B7EF24D9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+			};
+			name = RelWithDebInfo;
+		};
+		A1C69A3A8D4148AE83C7D2AF /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		AB46E4ADD87A44B8B7F31E06 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_PEDANTIC = YES;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-std=c++11",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Spade;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		AE6D9953657B4D4E93002D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/maciejoczko/PrivateRepositories/Spade;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		AF85465D78414F15A34262A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+			};
+			name = Release;
+		};
+		DFC365A4ACF845019B1338B9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E12DFB3B04074648A79EF736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = "/Users/maciejoczko/PrivateRepositories/Spade-build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		162BAD03B96447A8A274592F /* Build configuration list for PBXNativeTarget "Spade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2BD85734244785A3C759A7 /* Debug */,
+				59FA557840394C90B6950F90 /* Release */,
+				021FA026A06D467FB8A1C0A8 /* MinSizeRel */,
+				AB46E4ADD87A44B8B7F31E06 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		21955AC4EF08418B8FB914E4 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471DC3AB43C54B90A1E10C12 /* Debug */,
+				68043F9BFE284BD390690AAE /* Release */,
+				A1C69A3A8D4148AE83C7D2AF /* MinSizeRel */,
+				DFC365A4ACF845019B1338B9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		33CEFF9D3BFB4140B403192E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6D9953657B4D4E93002D5E /* Debug */,
+				7F14568F61C64C0EB58ECE71 /* Release */,
+				768ED0B5DC0742F4821D1B16 /* MinSizeRel */,
+				20ACF391CF9A45EFB34AAFD0 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DBFB4CE01CE946FC8B0E9E99 /* Build configuration list for PBXProject "Spade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12DFB3B04074648A79EF736 /* Debug */,
+				AF85465D78414F15A34262A7 /* Release */,
+				264C15DF6B38453F880D1029 /* MinSizeRel */,
+				87377F141B434002B7EF24D9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E88B4D29DF554B14A367957C /* Project object */;
+}

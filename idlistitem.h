@@ -1,5 +1,4 @@
-#ifndef IDLISTITEM_H
-#define IDLISTITEM_H
+#pragma once
 
 #include <list>
 #include <iostream>
@@ -38,5 +37,3 @@ public:
         return os;
     }
 };
-
-#endif // IDLISTITEM_H

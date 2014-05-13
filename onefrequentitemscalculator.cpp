@@ -1,6 +1,5 @@
 #include "onefrequentitemscalculator.h"
 #include <vector>
-#include <algorithm>
 #include "idlistitem.h"
 
 OneFrequentItemsCalculator::OneFrequentItemsCalculator(unsigned int minSupport) : _minSupport(minSupport) {}

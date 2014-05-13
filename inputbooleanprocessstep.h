@@ -1,5 +1,4 @@
-#ifndef INPUTBOOLEANPROCESSSTEP_H
-#define INPUTBOOLEANPROCESSSTEP_H
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -29,5 +28,3 @@ public:
         return InputErrorReturnCode::NoError;
     }
 };
-
-#endif // INPUTBOOLEANPROCESSSTEP_H

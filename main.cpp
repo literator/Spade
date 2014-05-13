@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 
 #include "filemanagement.h"
 #include "config.h"
@@ -24,7 +23,7 @@ int main(int argc, char** argv)
 
     processor->addStep(InputBooleanProcessStep([&] () {
         cerr << "Invalid parameter count.\nThe command to run the program  - \"" << argv[0] << " <input file path> <result file path>\"." << endl;
-    }, InputErrorReturnCode::WrongParamtersCount, argc != 3));
+    }, InputErrorReturnCode::WrongParametersCount, argc != 3));
 
     processor->addStep(InputTryCatchProcessStep([&] () {
         input.openFile(string(argv[1]));

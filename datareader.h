@@ -1,5 +1,4 @@
-#ifndef DATAREADER_H
-#define DATAREADER_H
+#pragma once
 
 #include <list>
 #include "transaction.h"
@@ -15,5 +14,3 @@ public:
     TransactionList readTransactions(InputReader& input);
     Transaction readTransaction(const string& line);
 };
-
-#endif // DATAREADER_H

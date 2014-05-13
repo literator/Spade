@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>553CD0D6-87E7-4F0E-AE43-B7B1F3A636A9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Spade</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D8969451-E141-4A6B-B35D-470D336CDE5E</key>
+		<string>ssh://github.com/literator/Spade.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Spade.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D8969451-E141-4A6B-B35D-470D336CDE5E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/literator/Spade.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D8969451-E141-4A6B-B35D-470D336CDE5E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D8969451-E141-4A6B-B35D-470D336CDE5E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Spade</string>
+		</dict>
+	</array>
+</dict>
+</plist>

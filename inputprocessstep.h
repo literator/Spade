@@ -1,11 +1,10 @@
-#ifndef INPUTPROCESSSTEP_H
-#define INPUTPROCESSSTEP_H
+#pragma once
 
 #include <functional>
 
 enum class InputErrorReturnCode : int {
     NoError = 0,
-    WrongParamtersCount = 1,
+    WrongParametersCount = 1,
     OpeningInputFile = 2,
     OpeningOutputFile = 3,
     ReadingConfiguration = 4,
@@ -26,5 +25,3 @@ public:
     virtual InputErrorReturnCode processAction() { return InputErrorReturnCode::Unknown; }
     virtual ~InputProcessStep() {}
 };
-
-#endif // INPUTPROCESSSTEP_H

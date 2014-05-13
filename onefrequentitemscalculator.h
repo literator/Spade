@@ -1,5 +1,4 @@
-#ifndef ONEFREQUENTITEMSCALCULATOR_H
-#define ONEFREQUENTITEMSCALCULATOR_H
+#pragma once
 
 #include "types.h"
 
@@ -13,5 +12,3 @@ public:
     OneFrequentItemsCalculator(unsigned int minSupport);
     IdListItemSets oneFrequentItems(IdListItemSets &allItems);
 };
-
-#endif // ONEFREQUENTITEMSCALCULATOR_H

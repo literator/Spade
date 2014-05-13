@@ -1,5 +1,4 @@
-#ifndef FILEMANAGEMENT_H
-#define FILEMANAGEMENT_H
+#pragma once
 
 #include <fstream>
 #include <string>
@@ -55,5 +54,3 @@ public:
     void writeLine(const std::string& line);
     void write(const std::string& text);
 };
-
-#endif // FILEMANAGEMENT_H
