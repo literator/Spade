@@ -20,6 +20,7 @@ IdListItemSets OneFrequentItemsCalculator::oneFrequentItems(IdListItemSets &allI
                     != end(checkedSequencesIDs);
             if(!sequenceIDFound)
             {
+                checkedSequencesIDs.push_back(pair.first);
                 itemPtr->support++;
             }
         }
