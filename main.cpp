@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     }, InputErrorReturnCode::ReadingConfiguration));
 
     InputErrorReturnCode status = processor->processSteps();
-    if(status != InputErrorReturnCode::NoError)
+    if(status != InputErrorReturnCode::Success)
     {
         return (int)status;
     }
@@ -59,6 +59,6 @@ int main(int argc, char** argv)
         cout << *itemPtr << endl;
     }
 
-    return 0;
+    return (int)InputErrorReturnCode::Success;
 }
 

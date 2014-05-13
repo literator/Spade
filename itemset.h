@@ -1,5 +1,4 @@
-#ifndef ITEMSET_H
-#define ITEMSET_H
+#pragma once
 
 #include <list>
 #include <iostream>
@@ -37,5 +36,3 @@ public:
         return os;
     }
 };
-
-#endif // ITEMSET_H

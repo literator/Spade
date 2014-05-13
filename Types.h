@@ -19,8 +19,12 @@ typedef uint MapValue;
 typedef list<Item> ItemList;
 typedef list<Transaction> TransactionList;
 
-typedef pair<SequenceID, EventID> IdListPair;
-typedef list<IdListPair> IdListPairs;
+typedef pair<SequenceID, EventID> SequenceEventPair;
+typedef list<SequenceEventPair> SequenceEventPairs;
+
+typedef pair<Item, EventID> ItemEventPair;
+typedef list<ItemEventPair> ItemEventPairs;
+
 typedef shared_ptr<IdListItemSet> IdListItemSetPtr;
 typedef list<IdListItemSetPtr> IdListItemSets;
 
@@ -28,7 +32,7 @@ typedef void(*LineProcessor)(const string&);
 
 // Not directly related
 
-typedef list<list<Transaction> > SequenceData;
+typedef list<list<Transaction>> SequenceData;
 
 enum JoinTiming{SIMULTANEOUS, BEFORE, AFTER};
 

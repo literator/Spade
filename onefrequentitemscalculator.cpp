@@ -11,8 +11,8 @@ IdListItemSets OneFrequentItemsCalculator::oneFrequentItems(IdListItemSets &allI
 
     for(IdListItemSetPtr itemPtr : allItems)
     {
-        IdListPairs pairs = itemPtr->pairs();
-        for(IdListPair &pair : pairs)
+        SequenceEventPairs pairs = itemPtr->pairs();
+        for(SequenceEventPair &pair : pairs)
         {
             bool sequenceIDFound = find_if(begin(checkedSequencesIDs),
                                            end(checkedSequencesIDs),

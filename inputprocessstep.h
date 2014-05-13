@@ -3,7 +3,7 @@
 #include <functional>
 
 enum class InputErrorReturnCode : int {
-    NoError = 0,
+    Success = 0,
     WrongParametersCount = 1,
     OpeningInputFile = 2,
     OpeningOutputFile = 3,

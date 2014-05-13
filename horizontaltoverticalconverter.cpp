@@ -25,7 +25,7 @@ IdListItemSets HorizontalToVerticalConverter::convertTransactions(TransactionLis
                         *idListItemPtrIterator :
                         make_shared<IdListItemSet>(new IdListItemSet(item));
 
-            IdListPair pair = make_pair<SequenceID, EventID>(transaction.sequenceID(),
+            SequenceEventPair pair = make_pair<SequenceID, EventID>(transaction.sequenceID(),
                                                              transaction.eventID());
             itemPtr->addPair(pair);
             if(!itemAlreadyExists)

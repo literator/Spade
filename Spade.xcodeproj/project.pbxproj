@@ -40,6 +40,7 @@
 		2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC326F2E1194BD18E05E02D /* itemset.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923EA216C92C4FECB7EE0FE7 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		80009806B91E42228C25819A /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737F0BDD42144D869BEB630D /* utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		810869CE3733A7103812F2A5 /* Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810868D4677D55BFE6A96DD1 /* Sequence.cpp */; };
 		94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FA06D3C482461EBD025D39 /* filemanagement.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD004F082814285943CD809 /* inputprocessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B4A5EA38A7B34D849B8AA830 /* inputprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -86,6 +87,23 @@
 		6498681A80F64C1AAB24A955 /* idlistitem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = idlistitem.cpp; sourceTree = SOURCE_ROOT; };
 		737F0BDD42144D869BEB630D /* utilities.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = utilities.cpp; sourceTree = SOURCE_ROOT; };
 		7DC326F2E1194BD18E05E02D /* itemset.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = itemset.cpp; sourceTree = SOURCE_ROOT; };
+		81086048A5D7F22141977F71 /* datareader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datareader.h; sourceTree = "<group>"; };
+		8108627E29D2DA90F6750CA8 /* transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transaction.h; sourceTree = "<group>"; };
+		81086395C55B2376C20E16E0 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		810865B411C7DCD8764B5EB2 /* inputprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessstep.h; sourceTree = "<group>"; };
+		810866CB62ED5C0F47754B3A /* idlistitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idlistitem.h; sourceTree = "<group>"; };
+		810867AB78989D5F0C8048E2 /* horizontaltoverticalconverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = horizontaltoverticalconverter.h; sourceTree = "<group>"; };
+		810868D4677D55BFE6A96DD1 /* Sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence.cpp; sourceTree = "<group>"; };
+		81086A4A1D725B4CF2D611C0 /* onefrequentitemscalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = onefrequentitemscalculator.h; sourceTree = "<group>"; };
+		81086A8A6887185D288D5E7D /* ConfigReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigReader.h; sourceTree = "<group>"; };
+		81086B533F37E8E2908CEA0F /* inputbooleanprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputbooleanprocessstep.h; sourceTree = "<group>"; };
+		81086CF1B6721A807DB7E655 /* Sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence.h; sourceTree = "<group>"; };
+		81086D07609152A1150EABAE /* itemset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemset.h; sourceTree = "<group>"; };
+		81086DB5DA4220C3E0EF9352 /* inputprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessor.h; sourceTree = "<group>"; };
+		81086E78E41B12997455D166 /* inputtrycatchprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputtrycatchprocessstep.h; sourceTree = "<group>"; };
+		81086EB11D19333965CE04A8 /* filemanagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filemanagement.h; sourceTree = "<group>"; };
+		81086EDAE2FC9C5ABD1AFB8D /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		81086F4CDB3DC131A2D532C8 /* utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
 		8184C36E692A4811B43A994E /* configreader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = configreader.cpp; sourceTree = SOURCE_ROOT; };
 		923EA216C92C4FECB7EE0FE7 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputbooleanprocessstep.cpp; sourceTree = SOURCE_ROOT; };
@@ -147,6 +165,23 @@
 				52DF97D4794341F89E05F440 /* onefrequentitemscalculator.cpp */,
 				19ABB8D621A640FCA767EDF2 /* transaction.cpp */,
 				737F0BDD42144D869BEB630D /* utilities.cpp */,
+				810868D4677D55BFE6A96DD1 /* Sequence.cpp */,
+				81086CF1B6721A807DB7E655 /* Sequence.h */,
+				81086048A5D7F22141977F71 /* datareader.h */,
+				81086EB11D19333965CE04A8 /* filemanagement.h */,
+				810867AB78989D5F0C8048E2 /* horizontaltoverticalconverter.h */,
+				810866CB62ED5C0F47754B3A /* idlistitem.h */,
+				81086B533F37E8E2908CEA0F /* inputbooleanprocessstep.h */,
+				81086DB5DA4220C3E0EF9352 /* inputprocessor.h */,
+				810865B411C7DCD8764B5EB2 /* inputprocessstep.h */,
+				81086E78E41B12997455D166 /* inputtrycatchprocessstep.h */,
+				81086A4A1D725B4CF2D611C0 /* onefrequentitemscalculator.h */,
+				8108627E29D2DA90F6750CA8 /* transaction.h */,
+				81086395C55B2376C20E16E0 /* types.h */,
+				81086EDAE2FC9C5ABD1AFB8D /* config.h */,
+				81086A8A6887185D288D5E7D /* ConfigReader.h */,
+				81086D07609152A1150EABAE /* itemset.h */,
+				81086F4CDB3DC131A2D532C8 /* utilities.h */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
@@ -284,6 +319,7 @@
 				E829E8ED7EFC4FFFA5B5730C /* onefrequentitemscalculator.cpp in Sources */,
 				20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */,
 				80009806B91E42228C25819A /* utilities.cpp in Sources */,
+				810869CE3733A7103812F2A5 /* Sequence.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

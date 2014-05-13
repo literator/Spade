@@ -11,7 +11,7 @@ class IdListItemSet
 {
 private:
     ItemSet _itemSet;
-    IdListPairs _idListPairs;
+    SequenceEventPairs _sequenceEventPairs;
 public:
     unsigned int support;
 
@@ -24,8 +24,8 @@ public:
 
     ItemSet itemSet() const { return _itemSet; }
 
-    void addPair(IdListPair pair);
-    IdListPairs pairs() const { return _idListPairs; }
+    void addPair(SequenceEventPair pair);
+    SequenceEventPairs pairs() const { return _sequenceEventPairs; }
 
     friend ostream& operator<<(ostream& os, const IdListItemSet& idListItemSet)
     {

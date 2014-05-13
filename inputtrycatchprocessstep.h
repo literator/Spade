@@ -21,6 +21,6 @@ public:
             cerr << "Unknown error occured" << endl;
             return InputErrorReturnCode::Unknown;
         }
-        return InputErrorReturnCode::NoError;
+        return InputErrorReturnCode::Success;
     }
 };

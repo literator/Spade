@@ -25,6 +25,6 @@ public:
             this->_action();
             return this->_errorCode;
         }
-        return InputErrorReturnCode::NoError;
+        return InputErrorReturnCode::Success;
     }
 };

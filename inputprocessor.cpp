@@ -16,11 +16,11 @@ InputErrorReturnCode InputProcessor::processSteps()
 {
     for(InputProcessStep *step : _steps) {
         InputErrorReturnCode code = step->processAction();
-        if(code != InputErrorReturnCode::NoError) {
+        if(code != InputErrorReturnCode::Success) {
             return code;
         }
     }
-    return InputErrorReturnCode::NoError;
+    return InputErrorReturnCode::Success;
 }
 
 InputProcessor::~InputProcessor() {
