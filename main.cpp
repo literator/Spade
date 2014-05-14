@@ -5,11 +5,12 @@
 #include "configreader.h"
 #include "datareader.h"
 #include "idlistitem.h"
-#include "horizontaltoverticalconverter.h"
+#include "DatabaseConverter.h"
 #include "onefrequentitemscalculator.h"
 #include "inputprocessor.h"
 #include "inputbooleanprocessstep.h"
 #include "inputtrycatchprocessstep.h"
+#include "IdListSequenceSet.h"
 
 using namespace std;
 
@@ -48,15 +49,21 @@ int main(int argc, char** argv)
     DataReader dataReader;
     TransactionList transactions = dataReader.readTransactions(input);
 
-    HorizontalToVerticalConverter converter;
-    IdListItemSets idListItems = converter.convertTransactions(transactions);
+    DatabaseConverter converter;
+    IdListItemSets idListItems = converter.convertHorizontalToVertical(transactions);
 
     OneFrequentItemsCalculator ofiCalculator(config.minSupport());
     IdListItemSets oneFrequentItems = ofiCalculator.oneFrequentItems(idListItems);
 
     for (const IdListItemSetPtr itemPtr : oneFrequentItems)
     {
-        cout << *itemPtr << endl;
+        cout << (*itemPtr) << endl;
+    }
+
+    IdListSequenceSets idListSequenceSets = converter.convertVerticalToHorizontal(idListItems);
+
+    for (const IdListSequenceSetPtr sequenceSetPtr : idListSequenceSets) {
+        cout << (*sequenceSetPtr) << endl;
     }
 
     return (int)InputErrorReturnCode::Success;

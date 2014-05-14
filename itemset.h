@@ -13,6 +13,8 @@ private:
 public:
     ItemSet();
     ItemSet(ItemList);
+    ItemSet(const ItemSet &);
+    ItemSet(const ItemSet *);
     ~ItemSet();
 
     void addItem(Item item);
@@ -20,7 +22,6 @@ public:
 
     bool itemExists(Item item);
     ItemList items() const { return _items; }
-
 
     friend ostream& operator<<(ostream& os, const ItemSet& itemSet)
     {

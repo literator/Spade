@@ -9,6 +9,7 @@ using namespace std;
 class Transaction;
 class ItemSet;
 class IdListItemSet;
+class IdListSequenceSet;
 
 typedef unsigned int uint;
 typedef uint EventID;
@@ -22,11 +23,11 @@ typedef list<Transaction> TransactionList;
 typedef pair<SequenceID, EventID> SequenceEventPair;
 typedef list<SequenceEventPair> SequenceEventPairs;
 
-typedef pair<Item, EventID> ItemEventPair;
-typedef list<ItemEventPair> ItemEventPairs;
-
 typedef shared_ptr<IdListItemSet> IdListItemSetPtr;
 typedef list<IdListItemSetPtr> IdListItemSets;
+
+typedef shared_ptr<IdListSequenceSet> IdListSequenceSetPtr;
+typedef list<IdListSequenceSetPtr> IdListSequenceSets;
 
 typedef void(*LineProcessor)(const string&);
 
