@@ -6,8 +6,7 @@
 
 using namespace std;
 
-class ItemSet
-{
+class ItemSet {
 private:
     ItemList _items;
 public:
@@ -20,17 +19,37 @@ public:
     void addItem(Item item);
     void removeItem(Item item);
 
-    bool itemExists(Item item);
-    ItemList items() const { return _items; }
+    bool itemExists(Item item) const;
 
-    friend ostream& operator<<(ostream& os, const ItemSet& itemSet)
-    {
+    ItemList items() const {
+        return _items;
+    }
+
+    void addItemsToItemList(ItemList &itemList) {
+        for (auto item : _items) {
+            itemList.push_back(item);
+        }
+    }
+
+    bool operator==(const ItemSet &itemSet) const {
+        return _items == itemSet._items;
+    }
+
+    bool operator>(const ItemSet &itemSet) const {
+        return _items > itemSet._items;
+    }
+
+    bool operator<(const ItemSet &itemSet) const {
+        return _items < itemSet._items;
+    }
+
+    friend ostream &operator<<(ostream &os, const ItemSet &itemSet) {
+        static char alphabet[26] = "ABCDEFGHIJKLMNOPQRSTUWXYZ";
         uint index = 0;
         os << "itemSet: {";
-        for(const auto item : itemSet.items())
-        {
-            if(index != 0) { os << ", "; }
-            os << item;
+        for (const auto item : itemSet.items()) {
+            if (index != 0) {os << ", ";}
+            os << alphabet[item - 1];
             index++;
         }
         os << "}";

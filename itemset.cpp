@@ -20,7 +20,7 @@ void ItemSet::removeItem(Item item) {
     _items.remove(item);
 }
 
-bool ItemSet::itemExists(Item item) {
+bool ItemSet::itemExists(Item item) const {
     return find(begin(_items), end(_items), item) != end(_items);
 }
 

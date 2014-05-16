@@ -19,8 +19,8 @@ public:
     IdListSequenceSet(IdListSequenceSet *);
     ~IdListSequenceSet();
 
-    SequenceID sequenceID() const { return _sequenceID; }
-    ItemSetEventPairs pairs() const { return _itemEventPairs; }
+    SequenceID const &sequenceID() const { return _sequenceID; }
+    ItemSetEventPairs const &pairs() const { return _itemEventPairs; }
     void addPair(ItemSetEventPair);
 
     friend ostream& operator<<(ostream& os, const IdListSequenceSet& sequenceSet)

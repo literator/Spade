@@ -7,8 +7,7 @@
 
 using namespace std;
 
-class IdListItemSet
-{
+class IdListItemSet {
 private:
     ItemSet _itemSet;
     SequenceEventPairs _sequenceEventPairs;
@@ -22,16 +21,19 @@ public:
     IdListItemSet(const IdListItemSet &);
     ~IdListItemSet();
 
-    ItemSet itemSet() const { return _itemSet; }
+    ItemSet const &itemSet() {
+        return _itemSet;
+    }
 
     void addPair(SequenceEventPair pair);
-    SequenceEventPairs pairs() const { return _sequenceEventPairs; }
 
-    friend ostream& operator<<(ostream& os, const IdListItemSet& idListItemSet)
-    {
-        os << idListItemSet.itemSet() << ", support: " << idListItemSet.support << ", pairs: ";
-        for(const auto &pair : idListItemSet.pairs())
-        {
+    SequenceEventPairs pairs() const {
+        return _sequenceEventPairs;
+    }
+
+    friend ostream &operator<<(ostream &os, const IdListItemSet &idListItemSet) {
+        os << idListItemSet._itemSet << ", support: " << idListItemSet.support << ", pairs: ";
+        for (const auto &pair : idListItemSet.pairs()) {
             os << "[" << pair.first << "," << pair.second << "], ";
         }
         return os;
