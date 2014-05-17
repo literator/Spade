@@ -38,6 +38,7 @@ list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequ
     for (const IdListSequenceSetPtr &sequenceSetPtr : idListSequenceSets) {
         list<ExtendedIdListItemSet> innerItemSets;
         ItemSetEventPairs const &pairs = sequenceSetPtr->pairs();
+        SequenceID const &sequenceID = sequenceSetPtr->sequenceID();
 
         for (ItemSetEventPair pair : pairs) {
             ItemSet itemSet = pair.first;
@@ -47,7 +48,7 @@ list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequ
                 EventID innerEventID = innerPair.second;
                 if (itemSet == innerItemSet) continue;
 
-                ExtendedIdListItemSet idListItemSet(itemSet, eventID, innerItemSet, innerEventID);
+                ExtendedIdListItemSet idListItemSet(sequenceID, itemSet, eventID, innerItemSet, innerEventID);
 
                 bool itemExists = itemExistsInInnerSets(idListItemSet, innerItemSets);
                 bool itemSetEmpty = idListItemSet.itemSets().empty();
@@ -62,6 +63,9 @@ list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequ
             bool itemSetExists = idListItemSetIt != end(extendedItemSets);
             if (!itemSetExists) {
                 idListItemSetIt = extendedItemSets.insert(end(extendedItemSets), innerIdListItemSet);
+            } else {
+                EventID eventID = innerIdListItemSet.sequenceEventPairs.back().second;
+                idListItemSetIt->sequenceEventPairs.push_back(make_pair(sequenceID, eventID));
             }
             idListItemSetIt->support++;
         }
@@ -94,13 +98,18 @@ void ExtendedIdListItemSet::createExtendedIdListItemSet(ItemSet itemSet, ItemSet
     _itemSets = {ItemSet(itemList)};
 }
 
-ExtendedIdListItemSet::ExtendedIdListItemSet(ItemSet itemSet, EventID eventID, ItemSet innerItemSet, EventID innerEventID)
-        : support(0) {
+ExtendedIdListItemSet::ExtendedIdListItemSet(SequenceID sequenceId, ItemSet itemSet, EventID eventID, ItemSet innerItemSet, EventID innerEventID)
+        : support(0), sequenceEventPairs(SequenceEventPairs()) {
+    EventID eventToSave;
     if (eventID == innerEventID && itemSet < innerItemSet) {
         createExtendedIdListItemSet(itemSet, innerItemSet);
+        eventToSave = eventID;
     } else if (eventID < innerEventID) {
         createPreviousNextItemSet(itemSet, innerItemSet);
+        eventToSave = innerEventID;
     } else if (eventID > innerEventID) {
         createPreviousNextItemSet(innerItemSet, itemSet);
+        eventToSave = eventID;
     }
+    sequenceEventPairs.push_back(make_pair(sequenceId, eventToSave));
 }
