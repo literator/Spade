@@ -11,6 +11,7 @@
 #include "inputbooleanprocessstep.h"
 #include "inputtrycatchprocessstep.h"
 #include "IdListSequenceSet.h"
+#include "Timer.h"
 
 using namespace std;
 
@@ -50,22 +51,28 @@ int main(int argc, char **argv) {
     DatabaseConverter converter;
     IdListItemSets idListItems = converter.convertHorizontalToVertical(transactions);
 
+    Timer timer;
     FrequentItemsCalculator fiCalculator(config.minSupport());
     IdListItemSets oneFrequentItems = fiCalculator.oneFrequentItems(idListItems);
+    cout << "Elapsed: " << timer.elapsed() << endl;
 
     cout << "One frequent items:" << endl;
     for (const IdListItemSetPtr itemPtr : oneFrequentItems) {
         cout << (*itemPtr) << endl;
     }
 
-    IdListSequenceSets idListSequenceSets = converter.convertVerticalToHorizontal(idListItems);
+    timer.reset();
+    IdListSequenceSets idListSequenceSets = converter.convertVerticalToHorizontal(oneFrequentItems);
+    cout << "Elapsed: " << timer.elapsed() << endl;
 
     cout << "Horizontal representation:" << endl;
     for (const IdListSequenceSetPtr sequenceSetPtr : idListSequenceSets) {
         cout << (*sequenceSetPtr) << endl;
     }
 
+    timer.reset();
     list<ExtendedIdListItemSet> twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
+    cout << "Elapsed: " << timer.elapsed() << endl;
 
     cout << "Two frequent items:" << endl;
     for (const ExtendedIdListItemSet idListItemSet : twoFrequentItems) {

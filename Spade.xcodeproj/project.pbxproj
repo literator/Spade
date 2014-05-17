@@ -40,6 +40,7 @@
 		2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC326F2E1194BD18E05E02D /* itemset.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923EA216C92C4FECB7EE0FE7 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		80009806B91E42228C25819A /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737F0BDD42144D869BEB630D /* utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8108632271BA996E61C22822 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086C9666909C36D7317792 /* Timer.cpp */; };
 		810869CE3733A7103812F2A5 /* IdListSequenceSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810868D4677D55BFE6A96DD1 /* IdListSequenceSet.cpp */; };
 		94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FA06D3C482461EBD025D39 /* filemanagement.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD004F082814285943CD809 /* inputprocessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -92,11 +93,13 @@
 		81086395C55B2376C20E16E0 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		810865B411C7DCD8764B5EB2 /* inputprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessstep.h; sourceTree = "<group>"; };
 		810866CB62ED5C0F47754B3A /* idlistitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idlistitem.h; sourceTree = "<group>"; };
+		81086719B6A3302D36A5EE9A /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		810867AB78989D5F0C8048E2 /* DatabaseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseConverter.h; sourceTree = "<group>"; };
 		810868D4677D55BFE6A96DD1 /* IdListSequenceSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdListSequenceSet.cpp; sourceTree = "<group>"; };
 		81086A4A1D725B4CF2D611C0 /* frequentitemscalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frequentitemscalculator.h; sourceTree = "<group>"; };
 		81086A8A6887185D288D5E7D /* ConfigReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigReader.h; sourceTree = "<group>"; };
 		81086B533F37E8E2908CEA0F /* inputbooleanprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputbooleanprocessstep.h; sourceTree = "<group>"; };
+		81086C9666909C36D7317792 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		81086CF1B6721A807DB7E655 /* IdListSequenceSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdListSequenceSet.h; sourceTree = "<group>"; };
 		81086D07609152A1150EABAE /* itemset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemset.h; sourceTree = "<group>"; };
 		81086DB5DA4220C3E0EF9352 /* inputprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessor.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				81086A8A6887185D288D5E7D /* ConfigReader.h */,
 				81086D07609152A1150EABAE /* itemset.h */,
 				81086F4CDB3DC131A2D532C8 /* utilities.h */,
+				81086C9666909C36D7317792 /* Timer.cpp */,
+				81086719B6A3302D36A5EE9A /* Timer.h */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */,
 				80009806B91E42228C25819A /* utilities.cpp in Sources */,
 				810869CE3733A7103812F2A5 /* IdListSequenceSet.cpp in Sources */,
+				8108632271BA996E61C22822 /* Timer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
