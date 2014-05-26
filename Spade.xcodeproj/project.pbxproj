@@ -34,24 +34,24 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		01743D71A40648F6B8C8F40D /* DatabaseConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6A0E162ED08483E96957287 /* DatabaseConverter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		03B5A20DE6174501A5F53B7A /* datareader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB77FCCB5004855A76B2816 /* datareader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19ABB8D621A640FCA767EDF2 /* transaction.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC326F2E1194BD18E05E02D /* itemset.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923EA216C92C4FECB7EE0FE7 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		80009806B91E42228C25819A /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737F0BDD42144D869BEB630D /* utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		8108632271BA996E61C22822 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086C9666909C36D7317792 /* Timer.cpp */; };
-		810868F4F82BB2E620D580B4 /* ExtendedIdListItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810861EBFE0EFD0D6667170D /* ExtendedIdListItemSet.cpp */; };
-		810869CE3733A7103812F2A5 /* IdListSequenceSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810868D4677D55BFE6A96DD1 /* IdListSequenceSet.cpp */; };
-		94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FA06D3C482461EBD025D39 /* filemanagement.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD004F082814285943CD809 /* inputprocessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		B4A5EA38A7B34D849B8AA830 /* inputprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		BA137517EEEF4926AE4CB573 /* inputbooleanprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		C0E080FEA9F54B6D9F80B91A /* configreader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8184C36E692A4811B43A994E /* configreader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		E07C8E9E372B40FA8FE72A8A /* idlistitem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6498681A80F64C1AAB24A955 /* idlistitem.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		E1F4DE421FED4A02AB2F1F66 /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51A6ECE1C7944A03B3B164B7 /* config.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		E829E8ED7EFC4FFFA5B5730C /* frequentitemscalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52DF97D4794341F89E05F440 /* frequentitemscalculator.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		F16960D0B62540AFA16276E4 /* inputtrycatchprocessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086033BA518F0DD94E883A /* DatabaseConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8108633BD1F3CBA69AE80E70 /* DatabaseConverter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086402DC64790E3DD62668 /* InputBooleanProcessstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810867239A50501ADE789B36 /* InputBooleanProcessstep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8108645399E23B1743CDE54B /* IdListItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8108684A5720BC75C7F34811 /* IdListItemSet.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		810864573A59726D9111E0EF /* FileManagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086DC37D577914C7767E4D /* FileManagement.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8108654C4C5C01D87EE7B557 /* DataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810866F50B04FD8C978EFE44 /* DataReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		810866580EB54115794B7296 /* FrequentItemsCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810864DA8D27551AC5BEBB3D /* FrequentItemsCalculator.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8108677F1D2E129CC681455F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086C4F60CE6A806088CC38 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		810867BDDED3F2529D4CCDAE /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810862C592CCF9DF332AF9E7 /* Utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		810868E23DD2381882786A69 /* InputProcessStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8108685E499EF7170021C558 /* InputProcessStep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086ACD217A8C53D6C2163F /* ItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086B57F09D385120CE1941 /* IdListSequenceSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086255B379B24D24B0F95A /* IdListSequenceSet.cpp */; };
+		81086B7970291DC0A7E90C73 /* InputProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810866E973827A55DED8AE8D /* InputProcessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086BDBB57AC49DA95987CE /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086F8801E6BADA1A7A2D8B /* Config.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086C6105DED893AD5AA282 /* ConfigReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810865E06FF22AD023A5E487 /* ConfigReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086D514FBF5F6798C52C8F /* Transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810862F3575E62BCCA68135A /* Transaction.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086E10165CB269EC8F9369 /* ExtendedIdListItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086A0B995D8440DE846AA3 /* ExtendedIdListItemSet.cpp */; };
+		81086E4A3ED9C5F4FE7BC53B /* InputTryCatchProcessStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086B8A264AFA7C86DD3A83 /* InputTryCatchProcessStep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086F1494703A017EAA8E8C /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8108677FD94C644FA2A81223 /* Timer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,43 +79,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DB77FCCB5004855A76B2816 /* datareader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = datareader.cpp; sourceTree = SOURCE_ROOT; };
 		1248B1C7FEE94D3DBF57F383 /* Spade */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Spade; sourceTree = BUILT_PRODUCTS_DIR; };
-		19ABB8D621A640FCA767EDF2 /* transaction.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = transaction.cpp; sourceTree = SOURCE_ROOT; };
-		2BD004F082814285943CD809 /* inputprocessor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputprocessor.cpp; sourceTree = SOURCE_ROOT; };
-		51A6ECE1C7944A03B3B164B7 /* config.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = config.cpp; sourceTree = SOURCE_ROOT; };
-		52DF97D4794341F89E05F440 /* frequentitemscalculator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = frequentitemscalculator.cpp; sourceTree = SOURCE_ROOT; };
-		617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputprocessstep.cpp; sourceTree = SOURCE_ROOT; };
-		6498681A80F64C1AAB24A955 /* idlistitem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = idlistitem.cpp; sourceTree = SOURCE_ROOT; };
-		737F0BDD42144D869BEB630D /* utilities.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = utilities.cpp; sourceTree = SOURCE_ROOT; };
-		7DC326F2E1194BD18E05E02D /* itemset.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = itemset.cpp; sourceTree = SOURCE_ROOT; };
-		81086048A5D7F22141977F71 /* datareader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datareader.h; sourceTree = "<group>"; };
-		810861EBFE0EFD0D6667170D /* ExtendedIdListItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtendedIdListItemSet.cpp; sourceTree = "<group>"; };
-		8108627E29D2DA90F6750CA8 /* transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transaction.h; sourceTree = "<group>"; };
-		81086395C55B2376C20E16E0 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
-		810865B411C7DCD8764B5EB2 /* inputprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessstep.h; sourceTree = "<group>"; };
-		810866CB62ED5C0F47754B3A /* idlistitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idlistitem.h; sourceTree = "<group>"; };
-		81086709E1738E96910548A0 /* ExtendedIdListItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedIdListItemSet.h; sourceTree = "<group>"; };
-		81086719B6A3302D36A5EE9A /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		810867AB78989D5F0C8048E2 /* DatabaseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseConverter.h; sourceTree = "<group>"; };
-		810868D4677D55BFE6A96DD1 /* IdListSequenceSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdListSequenceSet.cpp; sourceTree = "<group>"; };
-		81086A4A1D725B4CF2D611C0 /* frequentitemscalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frequentitemscalculator.h; sourceTree = "<group>"; };
-		81086A8A6887185D288D5E7D /* ConfigReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigReader.h; sourceTree = "<group>"; };
-		81086B533F37E8E2908CEA0F /* inputbooleanprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputbooleanprocessstep.h; sourceTree = "<group>"; };
-		81086C9666909C36D7317792 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
-		81086CF1B6721A807DB7E655 /* IdListSequenceSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdListSequenceSet.h; sourceTree = "<group>"; };
-		81086D07609152A1150EABAE /* itemset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemset.h; sourceTree = "<group>"; };
-		81086DB5DA4220C3E0EF9352 /* inputprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputprocessor.h; sourceTree = "<group>"; };
-		81086E78E41B12997455D166 /* inputtrycatchprocessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputtrycatchprocessstep.h; sourceTree = "<group>"; };
-		81086EB11D19333965CE04A8 /* filemanagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filemanagement.h; sourceTree = "<group>"; };
-		81086EDAE2FC9C5ABD1AFB8D /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		81086F4CDB3DC131A2D532C8 /* utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
-		8184C36E692A4811B43A994E /* configreader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = configreader.cpp; sourceTree = SOURCE_ROOT; };
-		923EA216C92C4FECB7EE0FE7 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputbooleanprocessstep.cpp; sourceTree = SOURCE_ROOT; };
-		98FA06D3C482461EBD025D39 /* filemanagement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = filemanagement.cpp; sourceTree = SOURCE_ROOT; };
-		B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = inputtrycatchprocessstep.cpp; sourceTree = SOURCE_ROOT; };
-		E6A0E162ED08483E96957287 /* DatabaseConverter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = DatabaseConverter.cpp; sourceTree = SOURCE_ROOT; };
+		810860D216D422D131325D32 /* DatabaseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseConverter.h; sourceTree = "<group>"; };
+		810860D811531CAA7B177275 /* InputProcessStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputProcessStep.h; sourceTree = "<group>"; };
+		81086255B379B24D24B0F95A /* IdListSequenceSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdListSequenceSet.cpp; sourceTree = "<group>"; };
+		810862C592CCF9DF332AF9E7 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		810862F3575E62BCCA68135A /* Transaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transaction.cpp; sourceTree = "<group>"; };
+		8108633BD1F3CBA69AE80E70 /* DatabaseConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DatabaseConverter.cpp; sourceTree = "<group>"; };
+		8108639DE521176EC056D7AD /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		810863B9273594D784112613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		810864828737FECCD170698B /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		810864DA8D27551AC5BEBB3D /* FrequentItemsCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrequentItemsCalculator.cpp; sourceTree = "<group>"; };
+		810865E06FF22AD023A5E487 /* ConfigReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigReader.cpp; sourceTree = "<group>"; };
+		8108661E59F3071CAE8FE2CD /* InputTryCatchProcessStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTryCatchProcessStep.h; sourceTree = "<group>"; };
+		810866584B30DF84A7B52283 /* FrequentItemsCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequentItemsCalculator.h; sourceTree = "<group>"; };
+		8108668D374F8CCE87FACD9B /* ExtendedIdListItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedIdListItemSet.h; sourceTree = "<group>"; };
+		810866A34A3B4DEEF334AB2A /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		810866D2F06F738E21CF4C92 /* ConfigReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigReader.h; sourceTree = "<group>"; };
+		810866E973827A55DED8AE8D /* InputProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputProcessor.cpp; sourceTree = "<group>"; };
+		810866F50B04FD8C978EFE44 /* DataReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataReader.cpp; sourceTree = "<group>"; };
+		810867239A50501ADE789B36 /* InputBooleanProcessstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputBooleanProcessstep.cpp; sourceTree = "<group>"; };
+		81086759F0F55F89A2B61474 /* InputBooleanProcessstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputBooleanProcessstep.h; sourceTree = "<group>"; };
+		8108677FD94C644FA2A81223 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		8108681E21D7DE90F201D22C /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataReader.h; sourceTree = "<group>"; };
+		8108684A5720BC75C7F34811 /* IdListItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdListItemSet.cpp; sourceTree = "<group>"; };
+		8108685E499EF7170021C558 /* InputProcessStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputProcessStep.cpp; sourceTree = "<group>"; };
+		810868B3C8848A40351D2B1F /* FileManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManagement.h; sourceTree = "<group>"; };
+		81086A0B995D8440DE846AA3 /* ExtendedIdListItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtendedIdListItemSet.cpp; sourceTree = "<group>"; };
+		81086A1B27566A04EB228A5E /* InputProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputProcessor.h; sourceTree = "<group>"; };
+		81086B2B166C63EE0D3EF44B /* ItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSet.h; sourceTree = "<group>"; };
+		81086B8A264AFA7C86DD3A83 /* InputTryCatchProcessStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputTryCatchProcessStep.cpp; sourceTree = "<group>"; };
+		81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemSet.cpp; sourceTree = "<group>"; };
+		81086C4F60CE6A806088CC38 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		81086D227C4F4A61DC1C45F6 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		81086DC37D577914C7767E4D /* FileManagement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManagement.cpp; sourceTree = "<group>"; };
+		81086DCB6B2BF8623AF920F3 /* IdListItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdListItemSet.h; sourceTree = "<group>"; };
+		81086F8801E6BADA1A7A2D8B /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
+		81086F9F6BCC45CA7C1FD2B0 /* IdListSequenceSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdListSequenceSet.h; sourceTree = "<group>"; };
 		EA699651C41245B89B1EFF5E /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -156,44 +156,99 @@
 		5EA9CE568EE743EF97CCA1DA /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				51A6ECE1C7944A03B3B164B7 /* config.cpp */,
-				8184C36E692A4811B43A994E /* configreader.cpp */,
-				0DB77FCCB5004855A76B2816 /* datareader.cpp */,
-				98FA06D3C482461EBD025D39 /* filemanagement.cpp */,
-				E6A0E162ED08483E96957287 /* DatabaseConverter.cpp */,
-				6498681A80F64C1AAB24A955 /* idlistitem.cpp */,
-				96819B78686D474598E202B6 /* inputbooleanprocessstep.cpp */,
-				2BD004F082814285943CD809 /* inputprocessor.cpp */,
-				617F738F9B8F4C0180D7AEE3 /* inputprocessstep.cpp */,
-				B3EB9F5751174317A36F0483 /* inputtrycatchprocessstep.cpp */,
-				7DC326F2E1194BD18E05E02D /* itemset.cpp */,
-				923EA216C92C4FECB7EE0FE7 /* main.cpp */,
-				52DF97D4794341F89E05F440 /* frequentitemscalculator.cpp */,
-				19ABB8D621A640FCA767EDF2 /* transaction.cpp */,
-				737F0BDD42144D869BEB630D /* utilities.cpp */,
-				810868D4677D55BFE6A96DD1 /* IdListSequenceSet.cpp */,
-				81086CF1B6721A807DB7E655 /* IdListSequenceSet.h */,
-				81086048A5D7F22141977F71 /* datareader.h */,
-				81086EB11D19333965CE04A8 /* filemanagement.h */,
-				810867AB78989D5F0C8048E2 /* DatabaseConverter.h */,
-				810866CB62ED5C0F47754B3A /* idlistitem.h */,
-				81086B533F37E8E2908CEA0F /* inputbooleanprocessstep.h */,
-				81086DB5DA4220C3E0EF9352 /* inputprocessor.h */,
-				810865B411C7DCD8764B5EB2 /* inputprocessstep.h */,
-				81086E78E41B12997455D166 /* inputtrycatchprocessstep.h */,
-				81086A4A1D725B4CF2D611C0 /* frequentitemscalculator.h */,
-				8108627E29D2DA90F6750CA8 /* transaction.h */,
-				81086395C55B2376C20E16E0 /* types.h */,
-				81086EDAE2FC9C5ABD1AFB8D /* config.h */,
-				81086A8A6887185D288D5E7D /* ConfigReader.h */,
-				81086D07609152A1150EABAE /* itemset.h */,
-				81086F4CDB3DC131A2D532C8 /* utilities.h */,
-				81086C9666909C36D7317792 /* Timer.cpp */,
-				81086719B6A3302D36A5EE9A /* Timer.h */,
-				810861EBFE0EFD0D6667170D /* ExtendedIdListItemSet.cpp */,
-				81086709E1738E96910548A0 /* ExtendedIdListItemSet.h */,
 			);
 			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8108617404A391E09CBF39EE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				810862C592CCF9DF332AF9E7 /* Utilities.cpp */,
+				8108639DE521176EC056D7AD /* Utilities.h */,
+				8108677FD94C644FA2A81223 /* Timer.cpp */,
+				810864828737FECCD170698B /* Timer.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		810863E3FEFFF35255D9AD2E /* DataReading */ = {
+			isa = PBXGroup;
+			children = (
+				810868B3C8848A40351D2B1F /* FileManagement.h */,
+				8108681E21D7DE90F201D22C /* DataReader.h */,
+				81086DC37D577914C7767E4D /* FileManagement.cpp */,
+				810866F50B04FD8C978EFE44 /* DataReader.cpp */,
+			);
+			path = DataReading;
+			sourceTree = "<group>";
+		};
+		81086510FCB45A2361904810 /* Spade */ = {
+			isa = PBXGroup;
+			children = (
+				810863B9273594D784112613 /* Types.h */,
+				81086C4F60CE6A806088CC38 /* main.cpp */,
+				810864DA8D27551AC5BEBB3D /* FrequentItemsCalculator.cpp */,
+				810866584B30DF84A7B52283 /* FrequentItemsCalculator.h */,
+				8108617404A391E09CBF39EE /* Utilities */,
+				81086AE8DE714B05AEEA3602 /* Config */,
+				810863E3FEFFF35255D9AD2E /* DataReading */,
+				81086559E4ABAC4737D25FD5 /* DatabaseConvertion */,
+				81086DA05FA74540E48BCEB9 /* CommandLineProcessing */,
+				81086B3D79AC1D8AF354CCBF /* Model */,
+			);
+			path = Spade;
+			sourceTree = "<group>";
+		};
+		81086559E4ABAC4737D25FD5 /* DatabaseConvertion */ = {
+			isa = PBXGroup;
+			children = (
+				8108633BD1F3CBA69AE80E70 /* DatabaseConverter.cpp */,
+				810860D216D422D131325D32 /* DatabaseConverter.h */,
+			);
+			path = DatabaseConvertion;
+			sourceTree = "<group>";
+		};
+		81086AE8DE714B05AEEA3602 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				810866A34A3B4DEEF334AB2A /* Config.h */,
+				810866D2F06F738E21CF4C92 /* ConfigReader.h */,
+				81086F8801E6BADA1A7A2D8B /* Config.cpp */,
+				810865E06FF22AD023A5E487 /* ConfigReader.cpp */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		81086B3D79AC1D8AF354CCBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81086D227C4F4A61DC1C45F6 /* Transaction.h */,
+				81086B2B166C63EE0D3EF44B /* ItemSet.h */,
+				81086A0B995D8440DE846AA3 /* ExtendedIdListItemSet.cpp */,
+				81086F9F6BCC45CA7C1FD2B0 /* IdListSequenceSet.h */,
+				81086255B379B24D24B0F95A /* IdListSequenceSet.cpp */,
+				81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */,
+				810862F3575E62BCCA68135A /* Transaction.cpp */,
+				8108668D374F8CCE87FACD9B /* ExtendedIdListItemSet.h */,
+				81086DCB6B2BF8623AF920F3 /* IdListItemSet.h */,
+				8108684A5720BC75C7F34811 /* IdListItemSet.cpp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81086DA05FA74540E48BCEB9 /* CommandLineProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				8108685E499EF7170021C558 /* InputProcessStep.cpp */,
+				8108661E59F3071CAE8FE2CD /* InputTryCatchProcessStep.h */,
+				81086B8A264AFA7C86DD3A83 /* InputTryCatchProcessStep.cpp */,
+				810866E973827A55DED8AE8D /* InputProcessor.cpp */,
+				810860D811531CAA7B177275 /* InputProcessStep.h */,
+				810867239A50501ADE789B36 /* InputBooleanProcessstep.cpp */,
+				81086A1B27566A04EB228A5E /* InputProcessor.h */,
+				81086759F0F55F89A2B61474 /* InputBooleanProcessstep.h */,
+			);
+			path = CommandLineProcessing;
 			sourceTree = "<group>";
 		};
 		AF7C23897E134D1C8570FFE6 /* ALL_BUILD */ = {
@@ -235,6 +290,7 @@
 				2B7D4AD04A4D42FA873C0D03 /* Sources */,
 				12E04B539C1C4ED28A645E0F /* Resources */,
 				C8DBEDEBD351490690E28D2B /* Products */,
+				81086510FCB45A2361904810 /* Spade */,
 			);
 			sourceTree = "<group>";
 		};
@@ -314,24 +370,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F4DE421FED4A02AB2F1F66 /* config.cpp in Sources */,
-				C0E080FEA9F54B6D9F80B91A /* configreader.cpp in Sources */,
-				03B5A20DE6174501A5F53B7A /* datareader.cpp in Sources */,
-				94C33055674041E0B17470E5 /* filemanagement.cpp in Sources */,
-				01743D71A40648F6B8C8F40D /* DatabaseConverter.cpp in Sources */,
-				E07C8E9E372B40FA8FE72A8A /* idlistitem.cpp in Sources */,
-				BA137517EEEF4926AE4CB573 /* inputbooleanprocessstep.cpp in Sources */,
-				B3E058FE7ED245339454AE79 /* inputprocessor.cpp in Sources */,
-				B4A5EA38A7B34D849B8AA830 /* inputprocessstep.cpp in Sources */,
-				F16960D0B62540AFA16276E4 /* inputtrycatchprocessstep.cpp in Sources */,
-				2CD40023E3EA4B71B749C154 /* itemset.cpp in Sources */,
-				6DDE714C45F845F3BDBB40E9 /* main.cpp in Sources */,
-				E829E8ED7EFC4FFFA5B5730C /* frequentitemscalculator.cpp in Sources */,
-				20BBCBAC98FE41DFB6AD3ED5 /* transaction.cpp in Sources */,
-				80009806B91E42228C25819A /* utilities.cpp in Sources */,
-				810869CE3733A7103812F2A5 /* IdListSequenceSet.cpp in Sources */,
-				8108632271BA996E61C22822 /* Timer.cpp in Sources */,
-				810868F4F82BB2E620D580B4 /* ExtendedIdListItemSet.cpp in Sources */,
+				8108677F1D2E129CC681455F /* main.cpp in Sources */,
+				810866580EB54115794B7296 /* FrequentItemsCalculator.cpp in Sources */,
+				810867BDDED3F2529D4CCDAE /* Utilities.cpp in Sources */,
+				81086F1494703A017EAA8E8C /* Timer.cpp in Sources */,
+				81086BDBB57AC49DA95987CE /* Config.cpp in Sources */,
+				81086C6105DED893AD5AA282 /* ConfigReader.cpp in Sources */,
+				810864573A59726D9111E0EF /* FileManagement.cpp in Sources */,
+				8108654C4C5C01D87EE7B557 /* DataReader.cpp in Sources */,
+				81086033BA518F0DD94E883A /* DatabaseConverter.cpp in Sources */,
+				810868E23DD2381882786A69 /* InputProcessStep.cpp in Sources */,
+				81086E4A3ED9C5F4FE7BC53B /* InputTryCatchProcessStep.cpp in Sources */,
+				81086B7970291DC0A7E90C73 /* InputProcessor.cpp in Sources */,
+				81086402DC64790E3DD62668 /* InputBooleanProcessstep.cpp in Sources */,
+				81086E10165CB269EC8F9369 /* ExtendedIdListItemSet.cpp in Sources */,
+				81086B57F09D385120CE1941 /* IdListSequenceSet.cpp in Sources */,
+				81086ACD217A8C53D6C2163F /* ItemSet.cpp in Sources */,
+				81086D514FBF5F6798C52C8F /* Transaction.cpp in Sources */,
+				8108645399E23B1743CDE54B /* IdListItemSet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
