@@ -71,13 +71,17 @@ int main(int argc, char **argv) {
     }
 
     timer.reset();
-    list<ExtendedIdListItemSet> twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
+    vector<ExtendedIdListItemSet> twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
     cout << "Elapsed: " << timer.elapsed() << endl;
 
-    cout << "Two frequent items:" << endl;
+    fiCalculator.sort(twoFrequentItems);
+
+    cout << "Two frequent items (" << twoFrequentItems.size() << "):" << endl;
     for (const ExtendedIdListItemSet idListItemSet : twoFrequentItems) {
         cout << idListItemSet << endl;
     }
+
+//    fiCalculator.enumerateFrequentSequences(twoFrequentItems);
 
     return (int) InputErrorReturnCode::Success;
 }

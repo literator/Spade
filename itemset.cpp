@@ -17,7 +17,8 @@ void ItemSet::addItem(Item item) {
 }
 
 void ItemSet::removeItem(Item item) {
-    _items.remove(item);
+    auto it = find(begin(_items), end(_items), item);
+    _items.erase(it);
 }
 
 bool ItemSet::itemExists(Item item) const {

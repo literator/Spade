@@ -22,7 +22,7 @@ namespace Utilities
 
     std::vector<std::string> splitToVector(const std::string& s, const char delim, const bool dsd = false);
     std::list<std::string> splitToList(const std::string& s, const char delim, const bool dsd = false);
-    std::list<std::string> removeEmptyElems(const std::list<std::string>&);
+    vector<string> removeEmptyElems(const std::vector<std::string> &);
     bool isInteger(const std::string& s);
     bool isMapValue(const std::string& );
 

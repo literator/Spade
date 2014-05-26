@@ -1,7 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-#include <list>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -17,23 +17,21 @@ typedef uint Item;
 typedef uint SequenceID;
 typedef uint MapValue;
 
-typedef list<Item> ItemList;
-typedef list<Transaction> TransactionList;
+typedef vector<Item> ItemList;
+typedef vector<Transaction> TransactionList;
 
 typedef pair<SequenceID, EventID> SequenceEventPair;
-typedef list<SequenceEventPair> SequenceEventPairs;
+typedef vector<SequenceEventPair> SequenceEventPairs;
 
 typedef shared_ptr<IdListItemSet> IdListItemSetPtr;
-typedef list<IdListItemSetPtr> IdListItemSets;
+typedef vector<IdListItemSetPtr> IdListItemSets;
 
 typedef shared_ptr<IdListSequenceSet> IdListSequenceSetPtr;
-typedef list<IdListSequenceSetPtr> IdListSequenceSets;
+typedef vector<IdListSequenceSetPtr> IdListSequenceSets;
 
 typedef void(*LineProcessor)(const string&);
 
 // Not directly related
-
-typedef list<list<Transaction>> SequenceData;
 
 enum JoinTiming{SIMULTANEOUS, BEFORE, AFTER};
 

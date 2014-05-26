@@ -1,5 +1,4 @@
 #include "frequentitemscalculator.h"
-#include <vector>
 #include "idlistitem.h"
 #include "IdListSequenceSet.h"
 
@@ -32,11 +31,11 @@ IdListItemSets FrequentItemsCalculator::oneFrequentItems(IdListItemSets &allItem
     return oneFrequentItems;
 }
 
-list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
-    list<ExtendedIdListItemSet> extendedItemSets;
+vector<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
+    vector<ExtendedIdListItemSet> extendedItemSets;
 
     for (const IdListSequenceSetPtr &sequenceSetPtr : idListSequenceSets) {
-        list<ExtendedIdListItemSet> innerItemSets;
+        vector<ExtendedIdListItemSet> innerItemSets;
         ItemSetEventPairs const &pairs = sequenceSetPtr->pairs();
         SequenceID const &sequenceID = sequenceSetPtr->sequenceID();
 
@@ -49,7 +48,6 @@ list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequ
                 if (itemSet == innerItemSet) continue;
 
                 ExtendedIdListItemSet idListItemSet(sequenceID, itemSet, eventID, innerItemSet, innerEventID);
-
                 bool itemExists = itemExistsInInnerSets(idListItemSet, innerItemSets);
                 bool itemSetEmpty = idListItemSet.itemSets().empty();
                 if (!itemExists && !itemSetEmpty) {
@@ -71,45 +69,35 @@ list<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequ
         }
     }
 
-    extendedItemSets.remove_if([&](const ExtendedIdListItemSet &idListItem) {
+    auto removeIfIt = remove_if(begin(extendedItemSets), end(extendedItemSets), [&](const ExtendedIdListItemSet &idListItem) {
         return idListItem.support < _minSupport;
     });
+    extendedItemSets.erase(removeIfIt, end(extendedItemSets));
 
     return extendedItemSets;
 }
 
-bool FrequentItemsCalculator::itemExistsInInnerSets(ExtendedIdListItemSet idListItemSet, list<ExtendedIdListItemSet> innerSets) {
+bool FrequentItemsCalculator::itemExistsInInnerSets(ExtendedIdListItemSet idListItemSet, vector<ExtendedIdListItemSet> innerSets) {
     auto innerSetIt = find(begin(innerSets), end(innerSets), idListItemSet);
     bool elementExists = innerSetIt != end(innerSets);
     return elementExists;
 }
 
-void ExtendedIdListItemSet::createPreviousNextItemSet(ItemSet itemSet, ItemSet innerItemSet) {
-    ItemList previousItemList, nextItemList;
-    itemSet.addItemsToItemList(previousItemList);
-    innerItemSet.addItemsToItemList(nextItemList);
-    _itemSets = {ItemSet(previousItemList), ItemSet(nextItemList)};
-}
-
-void ExtendedIdListItemSet::createExtendedIdListItemSet(ItemSet itemSet, ItemSet innerItemSet) {
-    ItemList itemList;
-    itemSet.addItemsToItemList(itemList);
-    innerItemSet.addItemsToItemList(itemList);
-    _itemSets = {ItemSet(itemList)};
-}
-
-ExtendedIdListItemSet::ExtendedIdListItemSet(SequenceID sequenceId, ItemSet itemSet, EventID eventID, ItemSet innerItemSet, EventID innerEventID)
-        : support(0), sequenceEventPairs(SequenceEventPairs()) {
-    EventID eventToSave;
-    if (eventID == innerEventID && itemSet < innerItemSet) {
-        createExtendedIdListItemSet(itemSet, innerItemSet);
-        eventToSave = eventID;
-    } else if (eventID < innerEventID) {
-        createPreviousNextItemSet(itemSet, innerItemSet);
-        eventToSave = innerEventID;
-    } else if (eventID > innerEventID) {
-        createPreviousNextItemSet(innerItemSet, itemSet);
-        eventToSave = eventID;
+void FrequentItemsCalculator::sort(vector<ExtendedIdListItemSet> &list) {
+    auto maxItemSetIt = ::max_element(begin(list), end(list), [](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
+        return a.itemSets().size() < b.itemSets().size();
+    });
+    int maxSize = maxItemSetIt->itemSets().size();
+    for (int i = maxSize; i >= 0; --i) {
+        ::sort(begin(list), end(list), [&i](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
+            if (a.itemSets().size() > i && b.itemSets().size() > i) {
+                return a.itemSets()[i] < b.itemSets()[i];
+            }
+            return false;
+        });
     }
-    sequenceEventPairs.push_back(make_pair(sequenceId, eventToSave));
+}
+
+void FrequentItemsCalculator::enumerateFrequentSequences(vector<ExtendedIdListItemSet> sequences) {
+
 }
