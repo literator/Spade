@@ -2,25 +2,25 @@
 
 #include <iostream>
 #include "../Types.h"
-#include "../Model/ItemSet.h"
+#include "AtomSet.h"
 
 using namespace std;
 
 class IdListItemSet {
 private:
-    ItemSet _itemSet;
+    AtomSet _itemSet;
     SequenceEventPairs _sequenceEventPairs;
 public:
     unsigned int support;
 
     IdListItemSet();
-    IdListItemSet(Item);
-    IdListItemSet(ItemSet);
+    IdListItemSet(Atom);
+    IdListItemSet(AtomSet);
     IdListItemSet(IdListItemSet *);
     IdListItemSet(const IdListItemSet &);
     ~IdListItemSet();
 
-    ItemSet const &itemSet() {
+    AtomSet const &itemSet() {
         return _itemSet;
     }
 

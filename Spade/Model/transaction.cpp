@@ -9,7 +9,7 @@ Transaction::Transaction(const Transaction &transaction)
     this->_itemList = transaction._itemList;
 }
 
-Transaction::Transaction(const SequenceID sequenceID, const EventID eventID, const ItemList itemList) :
+Transaction::Transaction(const SequenceID sequenceID, const EventID eventID, const AtomList itemList) :
     _sequenceID(sequenceID), _eventID(eventID), _itemList(itemList) {}
 
 Transaction::~Transaction()

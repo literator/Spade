@@ -7,17 +7,17 @@
 using namespace std;
 
 class Transaction;
-class ItemSet;
+class AtomSet;
 class IdListItemSet;
 class IdListSequenceSet;
 
 typedef unsigned int uint;
 typedef uint EventID;
-typedef uint Item;
+typedef uint Atom;
 typedef uint SequenceID;
 typedef uint MapValue;
 
-typedef vector<Item> ItemList;
+typedef vector<Atom> AtomList;
 typedef vector<Transaction> TransactionList;
 
 typedef pair<SequenceID, EventID> SequenceEventPair;

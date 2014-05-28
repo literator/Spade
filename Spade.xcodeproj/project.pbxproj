@@ -43,7 +43,7 @@
 		8108677F1D2E129CC681455F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086C4F60CE6A806088CC38 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		810867BDDED3F2529D4CCDAE /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810862C592CCF9DF332AF9E7 /* Utilities.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		810868E23DD2381882786A69 /* InputProcessStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8108685E499EF7170021C558 /* InputProcessStep.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		81086ACD217A8C53D6C2163F /* ItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		81086ACD217A8C53D6C2163F /* AtomSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086BB03E0CA19CE4C74D54 /* AtomSet.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		81086B57F09D385120CE1941 /* IdListSequenceSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086255B379B24D24B0F95A /* IdListSequenceSet.cpp */; };
 		81086B7970291DC0A7E90C73 /* InputProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810866E973827A55DED8AE8D /* InputProcessor.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		81086BDBB57AC49DA95987CE /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81086F8801E6BADA1A7A2D8B /* Config.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -107,9 +107,9 @@
 		810868B3C8848A40351D2B1F /* FileManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManagement.h; sourceTree = "<group>"; };
 		81086A0B995D8440DE846AA3 /* ExtendedIdListItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtendedIdListItemSet.cpp; sourceTree = "<group>"; };
 		81086A1B27566A04EB228A5E /* InputProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputProcessor.h; sourceTree = "<group>"; };
-		81086B2B166C63EE0D3EF44B /* ItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSet.h; sourceTree = "<group>"; };
+		81086B2B166C63EE0D3EF44B /* AtomSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomSet.h; sourceTree = "<group>"; };
 		81086B8A264AFA7C86DD3A83 /* InputTryCatchProcessStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputTryCatchProcessStep.cpp; sourceTree = "<group>"; };
-		81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemSet.cpp; sourceTree = "<group>"; };
+		81086BB03E0CA19CE4C74D54 /* AtomSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AtomSet.cpp; sourceTree = "<group>"; };
 		81086C4F60CE6A806088CC38 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		81086D227C4F4A61DC1C45F6 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		81086DC37D577914C7767E4D /* FileManagement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManagement.cpp; sourceTree = "<group>"; };
@@ -223,11 +223,11 @@
 			isa = PBXGroup;
 			children = (
 				81086D227C4F4A61DC1C45F6 /* Transaction.h */,
-				81086B2B166C63EE0D3EF44B /* ItemSet.h */,
+				81086B2B166C63EE0D3EF44B /* AtomSet.h */,
 				81086A0B995D8440DE846AA3 /* ExtendedIdListItemSet.cpp */,
 				81086F9F6BCC45CA7C1FD2B0 /* IdListSequenceSet.h */,
 				81086255B379B24D24B0F95A /* IdListSequenceSet.cpp */,
-				81086BB03E0CA19CE4C74D54 /* ItemSet.cpp */,
+				81086BB03E0CA19CE4C74D54 /* AtomSet.cpp */,
 				810862F3575E62BCCA68135A /* Transaction.cpp */,
 				8108668D374F8CCE87FACD9B /* ExtendedIdListItemSet.h */,
 				81086DCB6B2BF8623AF920F3 /* IdListItemSet.h */,
@@ -385,7 +385,7 @@
 				81086402DC64790E3DD62668 /* InputBooleanProcessstep.cpp in Sources */,
 				81086E10165CB269EC8F9369 /* ExtendedIdListItemSet.cpp in Sources */,
 				81086B57F09D385120CE1941 /* IdListSequenceSet.cpp in Sources */,
-				81086ACD217A8C53D6C2163F /* ItemSet.cpp in Sources */,
+				81086ACD217A8C53D6C2163F /* AtomSet.cpp in Sources */,
 				81086D514FBF5F6798C52C8F /* Transaction.cpp in Sources */,
 				8108645399E23B1743CDE54B /* IdListItemSet.cpp in Sources */,
 			);

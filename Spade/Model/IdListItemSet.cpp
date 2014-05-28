@@ -1,13 +1,13 @@
 #include "IdListItemSet.h"
 
-IdListItemSet::IdListItemSet() : _itemSet(ItemSet()), _sequenceEventPairs(SequenceEventPairs()), support(0) {}
+IdListItemSet::IdListItemSet() : _itemSet(AtomSet()), _sequenceEventPairs(SequenceEventPairs()), support(0) {}
 
-IdListItemSet::IdListItemSet(Item item) : _itemSet(ItemSet()), _sequenceEventPairs(SequenceEventPairs()), support(0)
+IdListItemSet::IdListItemSet(Atom item) : _itemSet(AtomSet()), _sequenceEventPairs(SequenceEventPairs()), support(0)
 {
-    _itemSet.addItem(item);
+    _itemSet.addAtom(item);
 }
 
-IdListItemSet::IdListItemSet(ItemSet itemSet) :  _itemSet(itemSet), _sequenceEventPairs(SequenceEventPairs()), support(0)  {}
+IdListItemSet::IdListItemSet(AtomSet itemSet) :  _itemSet(itemSet), _sequenceEventPairs(SequenceEventPairs()), support(0)  {}
 
 IdListItemSet::IdListItemSet(IdListItemSet *item)
 {

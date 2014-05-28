@@ -1,32 +1,40 @@
 #include "ExtendedIdListItemSet.h"
 
+ExtendedIdListItemSet::ExtendedIdListItemSet(unsigned int support)
+        : support(support), _atomSets(AtomSetList()), sequenceEventPairs(SequenceEventPairs()) {
+}
+
+ExtendedIdListItemSet::ExtendedIdListItemSet(AtomSetList const &atomSets)
+        : _atomSets(atomSets), support(0), sequenceEventPairs(SequenceEventPairs()) {
+}
+
 ExtendedIdListItemSet::ExtendedIdListItemSet(const ExtendedIdListItemSet *itemSet) {
-    _itemSets = itemSet->_itemSets;
+    _atomSets = itemSet->_atomSets;
     support = itemSet->support;
     sequenceEventPairs = itemSet->sequenceEventPairs;
 }
 
 ExtendedIdListItemSet::ExtendedIdListItemSet(const ExtendedIdListItemSet &itemSet) {
-    _itemSets = itemSet._itemSets;
+    _atomSets = itemSet._atomSets;
     support = itemSet.support;
     sequenceEventPairs = itemSet.sequenceEventPairs;
 }
 
-void ExtendedIdListItemSet::createPreviousNextItemSet(ItemSet itemSet, ItemSet innerItemSet) {
-    ItemList previousItemList, nextItemList;
-    itemSet.addItemsToItemList(previousItemList);
-    innerItemSet.addItemsToItemList(nextItemList);
-    _itemSets = {ItemSet(previousItemList), ItemSet(nextItemList)};
+void ExtendedIdListItemSet::createPreviousNextItemSet(AtomSet itemSet, AtomSet innerItemSet) {
+    AtomList previousItemList, nextItemList;
+    itemSet.addAtomsToAtomList(previousItemList);
+    innerItemSet.addAtomsToAtomList(nextItemList);
+    _atomSets = {AtomSet(previousItemList), AtomSet(nextItemList)};
 }
 
-void ExtendedIdListItemSet::createExtendedIdListItemSet(ItemSet itemSet, ItemSet innerItemSet) {
-    ItemList itemList;
-    itemSet.addItemsToItemList(itemList);
-    innerItemSet.addItemsToItemList(itemList);
-    _itemSets = {ItemSet(itemList)};
+void ExtendedIdListItemSet::createExtendedIdListItemSet(AtomSet itemSet, AtomSet innerItemSet) {
+    AtomList itemList;
+    itemSet.addAtomsToAtomList(itemList);
+    innerItemSet.addAtomsToAtomList(itemList);
+    _atomSets = {AtomSet(itemList)};
 }
 
-ExtendedIdListItemSet::ExtendedIdListItemSet(SequenceID sequenceId, ItemSet itemSet, EventID eventID, ItemSet innerItemSet, EventID innerEventID)
+ExtendedIdListItemSet::ExtendedIdListItemSet(SequenceID sequenceId, AtomSet itemSet, EventID eventID, AtomSet innerItemSet, EventID innerEventID)
         : support(0), sequenceEventPairs(SequenceEventPairs()) {
     EventID eventToSave;
     if (eventID == innerEventID && itemSet < innerItemSet) {
@@ -40,4 +48,23 @@ ExtendedIdListItemSet::ExtendedIdListItemSet(SequenceID sequenceId, ItemSet item
         eventToSave = eventID;
     }
     sequenceEventPairs.push_back(make_pair(sequenceId, eventToSave));
+}
+
+bool const ExtendedIdListItemSet::hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet) {
+    AtomList localAtoms = this->allAtomsFlattened();
+    AtomList remoteAtoms = idListItemSet.allAtomsFlattened();
+    for (int i = 0; i < localAtoms.size() - 1; ++i) {
+        if (localAtoms[i] != remoteAtoms[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+AtomList ExtendedIdListItemSet::allAtomsFlattened() {
+    AtomList allAtoms;
+    for (AtomSet atomSet : _atomSets) {
+        copy(begin(atomSet.atoms()), end(atomSet.atoms()), back_inserter(allAtoms));
+    }
+    return allAtoms;
 }

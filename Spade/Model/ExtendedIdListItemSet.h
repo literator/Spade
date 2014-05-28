@@ -1,57 +1,62 @@
 #pragma once
 
 #include "../Types.h"
-#include "ItemSet.h"
+#include "AtomSet.h"
 
 using namespace std;
 
+class ExtendedIdListItemSet;
+
+typedef vector<ExtendedIdListItemSet> ExtendedIdListItemSetList;
+
 class ExtendedIdListItemSet {
 private:
-    vector<ItemSet> _itemSets;
+    AtomSetList _atomSets;
 
-    void createExtendedIdListItemSet(ItemSet itemSet, ItemSet innerItemSet);
-    void createPreviousNextItemSet(ItemSet itemSet, ItemSet innerItemSet);
+    void createExtendedIdListItemSet(AtomSet itemSet, AtomSet innerItemSet);
+    void createPreviousNextItemSet(AtomSet itemSet, AtomSet innerItemSet);
+
 public:
     unsigned int support;
     SequenceEventPairs sequenceEventPairs;
 
-    ExtendedIdListItemSet(unsigned int support = 0) : support(support), sequenceEventPairs(SequenceEventPairs()) {
-    }
-
-    ExtendedIdListItemSet(vector<ItemSet> const &itemSets)
-            : _itemSets(itemSets), support(0), sequenceEventPairs(SequenceEventPairs()) {
-    }
-
-    ExtendedIdListItemSet(SequenceID sequenceId, ItemSet itemSet, EventID eventID, ItemSet innerItemSet, EventID innerEventID);
+    ExtendedIdListItemSet(unsigned int support = 0);
+    ExtendedIdListItemSet(AtomSetList const &atomSets);
+    ExtendedIdListItemSet(SequenceID sequenceId, AtomSet itemSet, EventID eventID, AtomSet innerItemSet, EventID innerEventID);
 
     ExtendedIdListItemSet(const ExtendedIdListItemSet &);
     ExtendedIdListItemSet(const ExtendedIdListItemSet *);
 
-    vector<ItemSet> const &itemSets() const {
-        return _itemSets;
+    bool const hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet);
+    AtomList allAtomsFlattened();
+
+    AtomSetList const &atomSets() const {
+        return _atomSets;
+    }
+
+    int const numberOfAtoms() const {
+        int numberOfAtoms = 0;
+        for_each(begin(_atomSets), end(_atomSets), [&](const AtomSet &atomSet) {
+            numberOfAtoms += atomSet.size();
+        });
+        return numberOfAtoms;
     }
 
     bool operator==(const ExtendedIdListItemSet &extendedIdListItemSet) const {
-        bool itemSetsEqual = _itemSets == extendedIdListItemSet._itemSets;
-//        if (_itemSets.size() <= 1) return itemSetsEqual;
-//        if (sequenceEventPairs.size() != extendedIdListItemSet.sequenceEventPairs.size()) return false;
-//        bool eventIDsEqual = true;
-//        auto lit = begin(sequenceEventPairs);
-//        auto rit = begin(extendedIdListItemSet.sequenceEventPairs);
-//        for (; lit != end(sequenceEventPairs); lit++, rit++) {
-//            eventIDsEqual = eventIDsEqual && lit->second == rit->second;
-//        }
-//        return itemSetsEqual && eventIDsEqual;
-        return itemSetsEqual;
+        return _atomSets == extendedIdListItemSet._atomSets;
+    }
+
+    bool operator!=(const ExtendedIdListItemSet &extendedIdListItemSet) const {
+        return !(*this == extendedIdListItemSet);
     }
 
     bool operator<(const ExtendedIdListItemSet *extendedIdListItemSet) const {
-        return _itemSets < extendedIdListItemSet->_itemSets;
+        return _atomSets < extendedIdListItemSet->_atomSets;
     }
 
     friend ostream &operator<<(ostream &os, const ExtendedIdListItemSet &idListItemSet) {
         os << "support: " << idListItemSet.support << ", itemSets: ";
-        for (const auto &itemSet : idListItemSet.itemSets()) {
+        for (const auto &itemSet : idListItemSet.atomSets()) {
             os << "[" << itemSet << "], ";
         }
         for (const auto &sequenceEventPair : idListItemSet.sequenceEventPairs) {

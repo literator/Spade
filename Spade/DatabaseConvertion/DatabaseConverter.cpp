@@ -10,11 +10,11 @@ IdListItemSets DatabaseConverter::convertHorizontalToVertical(TransactionList &t
     IdListItemSets idListItems;
 
     for (const Transaction transaction : transactionList) {
-        for (const Item item : transaction.items()) {
+        for (const Atom item : transaction.items()) {
             auto idListItemPtrIterator = find_if(begin(idListItems),
                     end(idListItems),
                     [&](const IdListItemSetPtr itemPtr) {
-                        return itemPtr->itemSet().itemExists(item);
+                        return itemPtr->itemSet().atomExists(item);
                     });
 
             bool itemAlreadyExists = idListItemPtrIterator != end(idListItems);
@@ -37,7 +37,7 @@ IdListSequenceSets DatabaseConverter::convertVerticalToHorizontal(IdListItemSets
     IdListSequenceSets idListSequenceSets;
 
     for (auto itemSetPtr : idListItemSets) {
-        ItemSet itemSet = itemSetPtr->itemSet();
+        AtomSet itemSet = itemSetPtr->itemSet();
 
         for (auto sequenceEventPair : itemSetPtr->pairs()) {
             SequenceID sequenceID = sequenceEventPair.first;

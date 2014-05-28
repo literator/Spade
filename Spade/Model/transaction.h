@@ -10,14 +10,14 @@ class Transaction
 private:
     SequenceID _sequenceID;
     EventID _eventID;
-    ItemList _itemList;
+    AtomList _itemList;
 public:
     Transaction();
     Transaction(const Transaction&);
-    Transaction(const SequenceID, const EventID, const ItemList = ItemList());
+    Transaction(const SequenceID, const EventID, const AtomList = AtomList());
     ~Transaction();
 
-    inline ItemList items() const { return _itemList; }
+    inline AtomList items() const { return _itemList; }
     inline SequenceID sequenceID() const { return _sequenceID; }
     inline EventID eventID() const { return _eventID; }
 

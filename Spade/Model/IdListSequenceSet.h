@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../Types.h"
-#include "../Model/ItemSet.h"
+#include "AtomSet.h"
 #include <iostream>
 
-typedef pair<ItemSet, EventID> ItemSetEventPair;
+typedef pair<AtomSet, EventID> ItemSetEventPair;
 typedef vector<ItemSetEventPair> ItemSetEventPairs;
 
 using namespace std;

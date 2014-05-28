@@ -31,25 +31,25 @@ IdListItemSets FrequentItemsCalculator::oneFrequentItems(IdListItemSets &allItem
     return oneFrequentItems;
 }
 
-vector<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
-    vector<ExtendedIdListItemSet> extendedItemSets;
+ExtendedIdListItemSetList FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
+    ExtendedIdListItemSetList extendedItemSets;
 
     for (const IdListSequenceSetPtr &sequenceSetPtr : idListSequenceSets) {
-        vector<ExtendedIdListItemSet> innerItemSets;
+        ExtendedIdListItemSetList innerItemSets;
         ItemSetEventPairs const &pairs = sequenceSetPtr->pairs();
         SequenceID const &sequenceID = sequenceSetPtr->sequenceID();
 
         for (ItemSetEventPair pair : pairs) {
-            ItemSet itemSet = pair.first;
+            AtomSet itemSet = pair.first;
             EventID eventID = pair.second;
             for (ItemSetEventPair innerPair : pairs) {
-                ItemSet innerItemSet = innerPair.first;
+                AtomSet innerItemSet = innerPair.first;
                 EventID innerEventID = innerPair.second;
                 if (itemSet == innerItemSet) continue;
 
                 ExtendedIdListItemSet idListItemSet(sequenceID, itemSet, eventID, innerItemSet, innerEventID);
                 bool itemExists = itemExistsInInnerSets(idListItemSet, innerItemSets);
-                bool itemSetEmpty = idListItemSet.itemSets().empty();
+                bool itemSetEmpty = idListItemSet.atomSets().empty();
                 if (!itemExists && !itemSetEmpty) {
                     innerItemSets.push_back(idListItemSet);
                 }
@@ -77,27 +77,76 @@ vector<ExtendedIdListItemSet> FrequentItemsCalculator::twoFrequentItems(IdListSe
     return extendedItemSets;
 }
 
-bool FrequentItemsCalculator::itemExistsInInnerSets(ExtendedIdListItemSet idListItemSet, vector<ExtendedIdListItemSet> innerSets) {
+bool FrequentItemsCalculator::itemExistsInInnerSets(ExtendedIdListItemSet idListItemSet, ExtendedIdListItemSetList innerSets) {
     auto innerSetIt = find(begin(innerSets), end(innerSets), idListItemSet);
     bool elementExists = innerSetIt != end(innerSets);
     return elementExists;
 }
 
-void FrequentItemsCalculator::sort(vector<ExtendedIdListItemSet> &list) {
+void FrequentItemsCalculator::sort(ExtendedIdListItemSetList &list) {
     auto maxItemSetIt = ::max_element(begin(list), end(list), [](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
-        return a.itemSets().size() < b.itemSets().size();
+        return a.atomSets().size() < b.atomSets().size();
     });
-    int maxSize = maxItemSetIt->itemSets().size();
+    int maxSize = maxItemSetIt->atomSets().size();
     for (int i = maxSize; i >= 0; --i) {
         ::sort(begin(list), end(list), [&i](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
-            if (a.itemSets().size() > i && b.itemSets().size() > i) {
-                return a.itemSets()[i] < b.itemSets()[i];
+            if (a.atomSets().size() > i && b.atomSets().size() > i) {
+                return a.atomSets()[i] < b.atomSets()[i];
             }
             return false;
         });
     }
 }
 
-void FrequentItemsCalculator::enumerateFrequentSequences(vector<ExtendedIdListItemSet> sequences) {
-
+void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetList sequences) {
+    for (int i = 0; i < sequences.size(); ++i) {
+        ExtendedIdListItemSet idListItemSet = sequences[i];
+        ExtendedIdListItemSetList newSequences;
+        for (int j = i + 1; j < sequences.size(); ++j) {
+            ExtendedIdListItemSet innerIdListItemSet = sequences[j];
+            ExtendedIdListItemSetList joinedIdListItemSetList = temporalJoin(idListItemSet, innerIdListItemSet);
+            bool noJoinPerformed = joinedIdListItemSetList.empty();
+            if (noJoinPerformed) {
+                continue;
+            }
+        }
+    }
 }
+
+ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second) {
+    if (first.numberOfAtoms() != second.numberOfAtoms()) {
+        return ExtendedIdListItemSetList();
+    }
+    unsigned long firstSize = first.atomSets().size();
+    unsigned long secondSize = second.atomSets().size();
+    bool numberOfItemsSetsInRange = ::abs(firstSize - secondSize) <= 1;
+    if (!numberOfItemsSetsInRange) {
+        return ExtendedIdListItemSetList();
+    }
+    for (int i = 0, j = 0; i < firstSize, j < secondSize; ++i, ++j) {
+        AtomSet const &firstAtomSet = first.atomSets()[i];
+        AtomSet const &secondAtomSet = second.atomSets()[j];
+        if (firstAtomSet != secondAtomSet) {
+            bool isLastAtomSetFromFirst = i == firstSize - 1;
+            bool isLastAtomSetFromSecond = j == secondSize - 1;
+            if (isLastAtomSetFromFirst && isLastAtomSetFromSecond) {
+                if (firstAtomSet.atoms().front() != secondAtomSet.atoms().front()) {
+                    // s & s
+                } else {
+                    // e & e
+                }
+            } else {
+                if (first.hasEqualElementsExcludingLast(second)) {
+                    if (isLastAtomSetFromFirst) {
+                        // e + s
+                    } else if (isLastAtomSetFromSecond) {
+                        // s + e
+                    }
+                }
+            }
+        }
+    }
+
+    return ExtendedIdListItemSetList();
+}
+
