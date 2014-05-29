@@ -1,4 +1,5 @@
 #include "ExtendedIdListItemSet.h"
+#include <set>
 
 ExtendedIdListItemSet::ExtendedIdListItemSet(unsigned int support)
         : support(support), _atomSets(AtomSetList()), sequenceEventPairs(SequenceEventPairs()) {
@@ -67,4 +68,12 @@ AtomList ExtendedIdListItemSet::allAtomsFlattened() {
         copy(begin(atomSet.atoms()), end(atomSet.atoms()), back_inserter(allAtoms));
     }
     return allAtoms;
+}
+
+void ExtendedIdListItemSet::recalculateSupport() {
+    set<SequenceID> sequenceIDsSet;
+    for (SequenceEventPair pair : sequenceEventPairs) {
+        sequenceIDsSet.insert(pair.first);
+    }
+    this->support = sequenceIDsSet.size();
 }

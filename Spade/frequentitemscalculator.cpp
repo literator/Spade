@@ -128,6 +128,8 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
     if (!numberOfItemsSetsInRange) {
         return ExtendedIdListItemSetList();
     }
+
+    ExtendedIdListItemSetList joinedItemSetList;
     for (int i = 0, j = 0; i < firstSize, j < secondSize; ++i, ++j) {
         AtomSet const &firstAtomSet = first.atomSets()[i];
         AtomSet const &secondAtomSet = second.atomSets()[j];
@@ -141,6 +143,15 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
                     // e & e
                     ExtendedIdListItemSet newIdListItemSet(first);
                     newIdListItemSet.atomSets().back().addAtom(secondAtomSet.atoms().front());
+                    for (auto pair : second.sequenceEventPairs) {
+                        SequenceEventPairs eventPairs = newIdListItemSet.sequenceEventPairs;
+                        bool pairExists = find(begin(eventPairs), end(eventPairs), pair) != end(eventPairs);
+                        if (!pairExists) {
+                            newIdListItemSet.sequenceEventPairs.push_back(pair);
+                        }
+                    }
+                    newIdListItemSet.recalculateSupport();
+                    joinedItemSetList.push_back(newIdListItemSet);
                 }
             } else {
                 if (first.hasEqualElementsExcludingLast(second)) {
@@ -154,6 +165,6 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
         }
     }
 
-    return ExtendedIdListItemSetList();
+    return joinedItemSetList();
 }
 

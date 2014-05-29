@@ -27,6 +27,8 @@ public:
     ExtendedIdListItemSet(const ExtendedIdListItemSet &);
     ExtendedIdListItemSet(const ExtendedIdListItemSet *);
 
+    void recalculateSupport();
+
     bool const hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet);
     AtomList allAtomsFlattened();
 
