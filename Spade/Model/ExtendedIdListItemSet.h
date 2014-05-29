@@ -30,7 +30,7 @@ public:
     bool const hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet);
     AtomList allAtomsFlattened();
 
-    AtomSetList const &atomSets() const {
+    AtomSetList atomSets() const {
         return _atomSets;
     }
 

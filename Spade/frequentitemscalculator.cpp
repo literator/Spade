@@ -48,10 +48,21 @@ ExtendedIdListItemSetList FrequentItemsCalculator::twoFrequentItems(IdListSequen
                 if (itemSet == innerItemSet) continue;
 
                 ExtendedIdListItemSet idListItemSet(sequenceID, itemSet, eventID, innerItemSet, innerEventID);
-                bool itemExists = itemExistsInInnerSets(idListItemSet, innerItemSets);
+                auto innerSetIt = find(begin(innerItemSets), end(innerItemSets), idListItemSet);
+                bool itemExists = innerSetIt != end(innerItemSets);
                 bool itemSetEmpty = idListItemSet.atomSets().empty();
                 if (!itemExists && !itemSetEmpty) {
                     innerItemSets.push_back(idListItemSet);
+                }
+                if (itemExists) {
+                    SequenceEventPairs sequenceEventPairs = idListItemSet.sequenceEventPairs;
+                    for_each(begin(sequenceEventPairs), end(sequenceEventPairs), [&innerSetIt](SequenceEventPair sequenceEventPair) {
+                        SequenceEventPairs currentPairs = innerSetIt->sequenceEventPairs;
+                        auto pairIt = find(begin(currentPairs), end(currentPairs), sequenceEventPair);
+                        if (pairIt == end(currentPairs)) {
+                            innerSetIt->sequenceEventPairs.push_back(sequenceEventPair);
+                        }
+                    });
                 }
             }
         }
@@ -75,12 +86,6 @@ ExtendedIdListItemSetList FrequentItemsCalculator::twoFrequentItems(IdListSequen
     extendedItemSets.erase(removeIfIt, end(extendedItemSets));
 
     return extendedItemSets;
-}
-
-bool FrequentItemsCalculator::itemExistsInInnerSets(ExtendedIdListItemSet idListItemSet, ExtendedIdListItemSetList innerSets) {
-    auto innerSetIt = find(begin(innerSets), end(innerSets), idListItemSet);
-    bool elementExists = innerSetIt != end(innerSets);
-    return elementExists;
 }
 
 void FrequentItemsCalculator::sort(ExtendedIdListItemSetList &list) {
@@ -134,6 +139,8 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
                     // s & s
                 } else {
                     // e & e
+                    ExtendedIdListItemSet newIdListItemSet(first);
+                    newIdListItemSet.atomSets().back().addAtom(secondAtomSet.atoms().front());
                 }
             } else {
                 if (first.hasEqualElementsExcludingLast(second)) {
