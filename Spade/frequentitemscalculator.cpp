@@ -139,6 +139,31 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
             if (isLastAtomSetFromFirst && isLastAtomSetFromSecond) {
                 if (firstAtomSet.atoms().front() != secondAtomSet.atoms().front()) {
                     // s & s
+                    ExtendedIdListItemSet firstTrailingItemSet(first);
+                    firstTrailingItemSet.atomSets().push_back(secondAtomSet);
+
+                    ExtendedIdListItemSet secondTrailingItemSet(second);
+                    secondTrailingItemSet.atomSets().push_back(firstAtomSet);
+
+                    ExtendedIdListItemSet eventTrailingItemSet(first);
+                    eventTrailingItemSet.atomSets().back().addAtom(secondAtomSet.atoms().back());
+
+                    for (SequenceEventPair firstPair : first.sequenceEventPairs) {
+                        for (SequenceEventPair secondPair : second.sequenceEventPairs) {
+                            if (secondPair.first == firstPair.first) {
+
+                                if (firstPair.second < secondPair.second) {
+                                    firstTrailingItemSet.addPairIfNotExists(secondPair);
+                                } else if (firstPair.second == secondPair.second) {
+                                    eventTrailingItemSet.addPairIfNotExists(secondPair);
+                                } else if (firstPair.second > secondPair.second) {
+                                    secondTrailingItemSet.addPairIfNotExists(firstPair);
+                                }
+
+                            }
+                        }
+                    }
+
                 } else {
                     // e & e
                     ExtendedIdListItemSet newIdListItemSet(first);
@@ -165,6 +190,6 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
         }
     }
 
-    return joinedItemSetList();
+    return joinedItemSetList;
 }
 

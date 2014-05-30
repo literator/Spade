@@ -2,7 +2,7 @@
 #include <set>
 
 ExtendedIdListItemSet::ExtendedIdListItemSet(unsigned int support)
-        : support(support), _atomSets(AtomSetList()), sequenceEventPairs(SequenceEventPairs()) {
+        : _atomSets(AtomSetList()), support(support), sequenceEventPairs(SequenceEventPairs()) {
 }
 
 ExtendedIdListItemSet::ExtendedIdListItemSet(AtomSetList const &atomSets)
@@ -76,4 +76,11 @@ void ExtendedIdListItemSet::recalculateSupport() {
         sequenceIDsSet.insert(pair.first);
     }
     this->support = sequenceIDsSet.size();
+}
+
+void ExtendedIdListItemSet::addPairIfNotExists(SequenceEventPair pair) {
+    auto pairIt = find(begin(this->sequenceEventPairs), end(this->sequenceEventPairs), pair);
+    if (pairIt != end(this->sequenceEventPairs)) {
+        this->sequenceEventPairs.push_back(pair);
+    }
 }

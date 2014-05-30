@@ -29,6 +29,8 @@ public:
 
     void recalculateSupport();
 
+    void addPairIfNotExists(SequenceEventPair pair);
+
     bool const hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet);
     AtomList allAtomsFlattened();
 
