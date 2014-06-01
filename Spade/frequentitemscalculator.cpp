@@ -1,6 +1,8 @@
 #include "FrequentItemsCalculator.h"
 #include "Model/IdListItemSet.h"
 #include "Model/IdListSequenceSet.h"
+#include <iostream>
+#include <algorithm>
 
 FrequentItemsCalculator::FrequentItemsCalculator(unsigned int minSupport) : _minSupport(minSupport) {
 }
@@ -95,12 +97,19 @@ void FrequentItemsCalculator::sort(ExtendedIdListItemSetList &list) {
     int maxSize = maxItemSetIt->atomSets().size();
     for (int i = maxSize; i >= 0; --i) {
         ::sort(begin(list), end(list), [&i](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
-            if (a.atomSets().size() > i && b.atomSets().size() > i) {
+            unsigned long aSize = a.atomSets().size();
+            unsigned long bSize = b.atomSets().size();
+            if (aSize > i && bSize > i) {
                 return a.atomSets()[i] < b.atomSets()[i];
             }
             return false;
         });
     }
+    ::sort(begin(list), end(list), [&](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
+        unsigned long aSize = a.atomSets().size();
+        unsigned long bSize = b.atomSets().size();
+        return aSize < bSize;
+    });
 }
 
 void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetList sequences) {
@@ -114,6 +123,19 @@ void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetLi
             if (noJoinPerformed) {
                 continue;
             }
+            for (ExtendedIdListItemSet joinedIdListItemSet : joinedIdListItemSetList) {
+                if (joinedIdListItemSet.support >= this->_minSupport) {
+                    newSequences.push_back(joinedIdListItemSet);
+                }
+            }
+        }
+        if (!newSequences.empty()) {
+            cout << newSequences[0].allAtomsFlattened().size() << endl;
+            for (auto item : newSequences) {
+                cout << item << endl;
+            }
+            // DFS
+            enumerateFrequentSequences(newSequences);
         }
     }
 }
@@ -130,9 +152,21 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
     }
 
     ExtendedIdListItemSetList joinedItemSetList;
-    for (int i = 0, j = 0; i < firstSize, j < secondSize; ++i, ++j) {
-        AtomSet const &firstAtomSet = first.atomSets()[i];
-        AtomSet const &secondAtomSet = second.atomSets()[j];
+    for (unsigned int i = 0, j = 0; i < firstSize, j < secondSize; ++i, ++j) {
+        AtomSet firstAtomSet;
+        if (i < first.atomSets().size()) {
+            firstAtomSet = first.atomSets().at(i);
+        } else {
+            firstAtomSet = first.atomSets().at(--i);
+        }
+
+        AtomSet secondAtomSet;
+        if (j < second.atomSets().size()) {
+            secondAtomSet = second.atomSets().at(j);
+        } else {
+            secondAtomSet = second.atomSets().at(--j);
+        }
+
         if (firstAtomSet != secondAtomSet) {
             bool isLastAtomSetFromFirst = i == firstSize - 1;
             bool isLastAtomSetFromSecond = j == secondSize - 1;
@@ -140,13 +174,17 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
                 if (firstAtomSet.atoms().front() != secondAtomSet.atoms().front()) {
                     // s & s
                     ExtendedIdListItemSet firstTrailingItemSet(first);
-                    firstTrailingItemSet.atomSets().push_back(secondAtomSet);
+                    firstTrailingItemSet.sequenceEventPairs = SequenceEventPairs();
+                    firstTrailingItemSet.addAtomSet(secondAtomSet);
 
                     ExtendedIdListItemSet secondTrailingItemSet(second);
-                    secondTrailingItemSet.atomSets().push_back(firstAtomSet);
+                    secondTrailingItemSet.sequenceEventPairs = SequenceEventPairs();
+                    secondTrailingItemSet.addAtomSet(firstAtomSet);
 
                     ExtendedIdListItemSet eventTrailingItemSet(first);
-                    eventTrailingItemSet.atomSets().back().addAtom(secondAtomSet.atoms().back());
+                    eventTrailingItemSet.sequenceEventPairs = SequenceEventPairs();
+                    Atom atom = secondAtomSet.atoms().back();
+                    eventTrailingItemSet.addAtomToTheLatestAtomSet(atom);
 
                     for (SequenceEventPair firstPair : first.sequenceEventPairs) {
                         for (SequenceEventPair secondPair : second.sequenceEventPairs) {
@@ -163,15 +201,20 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
                             }
                         }
                     }
+                    firstTrailingItemSet.recalculateSupport();
+                    secondTrailingItemSet.recalculateSupport();
+                    eventTrailingItemSet.recalculateSupport();
 
                 } else {
                     // e & e
                     ExtendedIdListItemSet newIdListItemSet(first);
-                    newIdListItemSet.atomSets().back().addAtom(secondAtomSet.atoms().front());
+                    newIdListItemSet.sequenceEventPairs = SequenceEventPairs();
+                    Atom atom = secondAtomSet.atoms().back();
+                    newIdListItemSet.addAtomToTheLatestAtomSet(atom);
                     for (auto pair : second.sequenceEventPairs) {
-                        SequenceEventPairs eventPairs = newIdListItemSet.sequenceEventPairs;
+                        SequenceEventPairs eventPairs = first.sequenceEventPairs;
                         bool pairExists = find(begin(eventPairs), end(eventPairs), pair) != end(eventPairs);
-                        if (!pairExists) {
+                        if (pairExists) {
                             newIdListItemSet.sequenceEventPairs.push_back(pair);
                         }
                     }
@@ -182,8 +225,12 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
                 if (first.hasEqualElementsExcludingLast(second)) {
                     if (isLastAtomSetFromFirst) {
                         // e + s
+                        ExtendedIdListItemSet newIdListItemSet = eventSequenceItemSet(first, second, i + 1);
+                        joinedItemSetList.push_back(newIdListItemSet);
                     } else if (isLastAtomSetFromSecond) {
                         // s + e
+                        ExtendedIdListItemSet newIdListItemSet = eventSequenceItemSet(second, first, j + 1);
+                        joinedItemSetList.push_back(newIdListItemSet);
                     }
                 }
             }
@@ -191,5 +238,26 @@ ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListIt
     }
 
     return joinedItemSetList;
+}
+
+ExtendedIdListItemSet FrequentItemsCalculator::eventSequenceItemSet(ExtendedIdListItemSet &previousItemSet, ExtendedIdListItemSet &nextItemSet, int nextAtomSetIndex) {
+    ExtendedIdListItemSet newIdListItemSet(previousItemSet);
+    newIdListItemSet.sequenceEventPairs = SequenceEventPairs();
+    AtomSet atomSet = nextItemSet.atomSets()[nextAtomSetIndex];
+    newIdListItemSet.addAtomSet(atomSet);
+
+    for (auto pair : nextItemSet.sequenceEventPairs) {
+        SequenceEventPairs eventPairs = previousItemSet.sequenceEventPairs;
+        bool earlierPairExists = find_if(begin(eventPairs), end(eventPairs), [&pair](SequenceEventPair innerPair) {
+            bool isTheSameSequence = innerPair.first == pair.first;
+            bool isEventEarlier = innerPair.second < pair.second;
+            return isTheSameSequence && isEventEarlier;
+        }) != end(eventPairs);
+        if (earlierPairExists) {
+            newIdListItemSet.addPairIfNotExists(pair);
+        }
+    }
+    newIdListItemSet.recalculateSupport();
+    return newIdListItemSet;
 }
 

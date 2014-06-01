@@ -62,10 +62,12 @@ bool const ExtendedIdListItemSet::hasEqualElementsExcludingLast(ExtendedIdListIt
     return true;
 }
 
-AtomList ExtendedIdListItemSet::allAtomsFlattened() {
+AtomList ExtendedIdListItemSet::allAtomsFlattened() const {
     AtomList allAtoms;
     for (AtomSet atomSet : _atomSets) {
-        copy(begin(atomSet.atoms()), end(atomSet.atoms()), back_inserter(allAtoms));
+        for (auto atom : atomSet.atoms()) {
+            allAtoms.push_back(atom);
+        }
     }
     return allAtoms;
 }
@@ -83,4 +85,9 @@ void ExtendedIdListItemSet::addPairIfNotExists(SequenceEventPair pair) {
     if (pairIt != end(this->sequenceEventPairs)) {
         this->sequenceEventPairs.push_back(pair);
     }
+}
+
+void ExtendedIdListItemSet::addAtomToTheLatestAtomSet(Atom atom) {
+    AtomSet &lastAtomSet = this->_atomSets.back();
+    lastAtomSet.addAtom(atom);
 }

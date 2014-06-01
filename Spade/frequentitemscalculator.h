@@ -17,4 +17,5 @@ public:
     ExtendedIdListItemSetList twoFrequentItems(IdListSequenceSets idListSequenceSets);
     void enumerateFrequentSequences(ExtendedIdListItemSetList sequences);
     void sort(ExtendedIdListItemSetList &list);
+    ExtendedIdListItemSet eventSequenceItemSet(ExtendedIdListItemSet &previousItemSet, ExtendedIdListItemSet &nextItemSet, int nextAtomSetIndex);
 };

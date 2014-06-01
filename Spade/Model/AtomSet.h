@@ -24,7 +24,7 @@ public:
 
     bool atomExists(Atom atom) const;
 
-    AtomList atoms() const {
+    AtomList const &atoms() const {
         return _atoms;
     }
 

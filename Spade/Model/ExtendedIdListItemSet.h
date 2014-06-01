@@ -32,18 +32,18 @@ public:
     void addPairIfNotExists(SequenceEventPair pair);
 
     bool const hasEqualElementsExcludingLast(ExtendedIdListItemSet &idListItemSet);
-    AtomList allAtomsFlattened();
+    AtomList allAtomsFlattened() const;
 
-    AtomSetList atomSets() const {
+    AtomSetList const &atomSets() const {
         return _atomSets;
     }
 
+    void addAtomSet(AtomSet atomSet) {
+        _atomSets.push_back(atomSet);
+    }
+
     int const numberOfAtoms() const {
-        int numberOfAtoms = 0;
-        for_each(begin(_atomSets), end(_atomSets), [&](const AtomSet &atomSet) {
-            numberOfAtoms += atomSet.size();
-        });
-        return numberOfAtoms;
+        return allAtomsFlattened().size();
     }
 
     bool operator==(const ExtendedIdListItemSet &extendedIdListItemSet) const {
@@ -68,4 +68,6 @@ public:
         }
         return os;
     }
+
+    void addAtomToTheLatestAtomSet(Atom atom);
 };

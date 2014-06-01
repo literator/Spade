@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
         cout << idListItemSet << endl;
     }
 
-//    fiCalculator.enumerateFrequentSequences(twoFrequentItems);
+    fiCalculator.enumerateFrequentSequences(twoFrequentItems);
 
     return (int) InputErrorReturnCode::Success;
 }

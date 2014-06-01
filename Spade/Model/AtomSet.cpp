@@ -26,7 +26,12 @@ bool AtomSet::atomExists(Atom atom) const {
 }
 
 AtomSet::AtomSet(const AtomSet &itemSet) {
-    this->_atoms = itemSet._atoms;
+    AtomList atoms = itemSet.atoms();
+    if (!atoms.empty()) {
+        for (auto atom : atoms) {
+            _atoms.push_back(atom);
+        }
+    }
 }
 
 AtomSet::AtomSet(const AtomSet *itemSet) {
