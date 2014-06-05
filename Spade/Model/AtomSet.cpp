@@ -4,6 +4,10 @@
 AtomSet::AtomSet() : _atoms(AtomList()) {
 }
 
+AtomSet::AtomSet(Atom atom) : _atoms(AtomList()) {
+    _atoms.push_back(atom);
+}
+
 AtomSet::AtomSet(AtomList items) {
     _atoms = items;
 }

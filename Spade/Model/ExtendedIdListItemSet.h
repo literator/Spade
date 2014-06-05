@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include "../Types.h"
 #include "AtomSet.h"
 
@@ -8,6 +9,8 @@ using namespace std;
 class ExtendedIdListItemSet;
 
 typedef vector<ExtendedIdListItemSet> ExtendedIdListItemSetList;
+
+typedef map<SequenceID, vector<EventID>> SequenceEventMap;
 
 class ExtendedIdListItemSet {
 private:
@@ -42,9 +45,23 @@ public:
         _atomSets.push_back(atomSet);
     }
 
+    void addAtomToLastAtomSet(Atom atom) {
+        _atomSets.back().addAtom(atom);
+    }
+
+    Atom lastAtomFromLastAtomSet() const {
+        return _atomSets.back().lastAtom();
+    }
+
+    AtomSet lastAtomSet() const {
+        return _atomSets.back();
+    }
+
     int const numberOfAtoms() const {
         return allAtomsFlattened().size();
     }
+
+    SequenceEventMap sequenceEventMap() const;
 
     bool operator==(const ExtendedIdListItemSet &extendedIdListItemSet) const {
         return _atomSets == extendedIdListItemSet._atomSets;

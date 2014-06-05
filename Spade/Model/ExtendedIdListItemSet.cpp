@@ -82,7 +82,7 @@ void ExtendedIdListItemSet::recalculateSupport() {
 
 void ExtendedIdListItemSet::addPairIfNotExists(SequenceEventPair pair) {
     auto pairIt = find(begin(this->sequenceEventPairs), end(this->sequenceEventPairs), pair);
-    if (pairIt != end(this->sequenceEventPairs)) {
+    if (pairIt == end(this->sequenceEventPairs)) {
         this->sequenceEventPairs.push_back(pair);
     }
 }
@@ -90,4 +90,18 @@ void ExtendedIdListItemSet::addPairIfNotExists(SequenceEventPair pair) {
 void ExtendedIdListItemSet::addAtomToTheLatestAtomSet(Atom atom) {
     AtomSet &lastAtomSet = this->_atomSets.back();
     lastAtomSet.addAtom(atom);
+}
+
+SequenceEventMap ExtendedIdListItemSet::sequenceEventMap() const {
+    SequenceEventMap map;
+
+    for (SequenceEventPair pair : this->sequenceEventPairs) {
+        SequenceID sequenceID = pair.first;
+        if (map.find(sequenceID) == map.end()) {
+            map[sequenceID] = vector<EventID>();
+        }
+        map[sequenceID].push_back(pair.second);
+    }
+
+    return map;
 }

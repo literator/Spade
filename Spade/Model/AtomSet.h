@@ -14,6 +14,7 @@ private:
     AtomList _atoms;
 public:
     AtomSet();
+    AtomSet(Atom);
     AtomSet(AtomList);
     AtomSet(const AtomSet &);
     AtomSet(const AtomSet *);
@@ -26,6 +27,10 @@ public:
 
     AtomList const &atoms() const {
         return _atoms;
+    }
+
+    Atom const lastAtom() const {
+        return _atoms.back();
     }
 
     int const size() const { return _atoms.size(); }

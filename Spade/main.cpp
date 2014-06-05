@@ -54,34 +54,25 @@ int main(int argc, char **argv) {
     Timer timer;
     FrequentItemsCalculator fiCalculator(config.minSupport());
     IdListItemSets oneFrequentItems = fiCalculator.oneFrequentItems(idListItems);
-    cout << "Elapsed: " << timer.elapsed() << endl;
 
-    cout << "One frequent items:" << endl;
+    cout << "1 frequent items(" << oneFrequentItems.size() << "):" << endl;
     for (const IdListItemSetPtr itemPtr : oneFrequentItems) {
         cout << (*itemPtr) << endl;
     }
 
-    timer.reset();
     IdListSequenceSets idListSequenceSets = converter.convertVerticalToHorizontal(oneFrequentItems);
-    cout << "Elapsed: " << timer.elapsed() << endl;
 
-    cout << "Horizontal representation:" << endl;
-    for (const IdListSequenceSetPtr sequenceSetPtr : idListSequenceSets) {
-        cout << (*sequenceSetPtr) << endl;
-    }
-
-    timer.reset();
     ExtendedIdListItemSetList twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
-    cout << "Elapsed: " << timer.elapsed() << endl;
 
     fiCalculator.sort(twoFrequentItems);
 
-    cout << "Two frequent items (" << twoFrequentItems.size() << "):" << endl;
+    cout << "2 frequent items (" << twoFrequentItems.size() << "):" << endl;
     for (const ExtendedIdListItemSet idListItemSet : twoFrequentItems) {
         cout << idListItemSet << endl;
     }
 
     fiCalculator.enumerateFrequentSequences(twoFrequentItems);
+    cout << "Elapsed: " << timer.elapsed() << endl;
 
     return (int) InputErrorReturnCode::Success;
 }
