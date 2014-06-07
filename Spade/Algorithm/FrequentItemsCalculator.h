@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Types.h"
-#include "Model/AtomSet.h"
-#include "Model/ExtendedIdListItemSet.h"
+#include "../Types.h"
+#include "../Model/ExtendedIdListItemSet.h"
 
 using namespace std;
 

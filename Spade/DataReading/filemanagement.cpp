@@ -15,7 +15,7 @@ FileManager::~FileManager(){
  *	Function for closing the opened file.
  */
 void FileManager::closeFile(){
-    if (this->isOpened() == false){
+    if (!this->isOpened()){
         throw string("No opened file detected.");
     }
     this->_file.close();
@@ -32,7 +32,7 @@ void InputReader::openFile(const std::string& fileName, bool skipComments, bool 
 
     this->_file.open(fileName.c_str(), ios_base::in);
 
-    if (this->_file.is_open() == false){
+    if (!this->_file.is_open()){
         throw string("Cannot open file for reading.");
     }
 
@@ -80,7 +80,7 @@ void OutputWriter::openFile(const std::string& fileName){
 
     this->_file.open(fileName.c_str(), ios_base::out);
 
-    if (this->_file.is_open() == false){
+    if (!this->_file.is_open()){
         throw string("Cannot open file for writing.");
     }
 

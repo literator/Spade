@@ -1,6 +1,6 @@
 #include "FrequentItemsCalculator.h"
-#include "Model/IdListItemSet.h"
-#include "Model/IdListSequenceSet.h"
+#include "../Model/IdListItemSet.h"
+#include "../Model/IdListSequenceSet.h"
 
 FrequentItemsCalculator::FrequentItemsCalculator(unsigned int minSupport) : _minSupport(minSupport) {
 }
