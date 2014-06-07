@@ -3,6 +3,8 @@
 #include <iostream>
 #include "../Types.h"
 
+//#define ALPHABET
+
 using namespace std;
 
 class AtomSet;
@@ -58,12 +60,18 @@ public:
     }
 
     friend ostream &operator<<(ostream &os, const AtomSet &atomSet) {
+#ifdef ALPHABET
         static char alphabet[26] = "ABCDEFGHIJKLMNOPQRSTUWXYZ";
+#endif
         uint index = 0;
         os << "itemSet: {";
         for (const auto item : atomSet.atoms()) {
             if (index != 0) {os << ", ";}
+#ifdef ALPHABET
             os << alphabet[item - 1];
+#else
+            os << item;
+#endif
             index++;
         }
         os << "}";

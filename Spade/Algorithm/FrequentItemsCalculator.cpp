@@ -130,8 +130,10 @@ void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetLi
     }
     if (!newSequences.empty()) {
         cout << newSequences[0].numberOfAtoms() << " frequent items (" << newSequences.size() << "):" << endl;
-        for (auto item : newSequences) {
-            cout << item << endl;
+        if (newSequences[0].numberOfAtoms() >= this->_minSupport) {
+            for (auto item : newSequences) {
+                cout << item << endl;
+            }
         }
         // BFS
         enumerateFrequentSequences(newSequences);

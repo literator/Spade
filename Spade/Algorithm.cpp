@@ -18,7 +18,7 @@ void Algorithm::run(TransactionList transactions) {
     FrequentItemsCalculator fiCalculator(_config.minSupport());
     IdListItemSets oneFrequentItems = fiCalculator.oneFrequentItems(idListItems);
 
-    cout << "1 frequent items(" << oneFrequentItems.size() << "):" << endl;
+    cout << "1 frequent items (" << oneFrequentItems.size() << "):" << endl;
     for (const IdListItemSetPtr itemPtr : oneFrequentItems) {
         cout << (*itemPtr) << endl;
     }
