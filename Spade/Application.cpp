@@ -44,11 +44,7 @@ int Application::run() {
         return (int) status;
     }
 
-    DataReader dataReader;
-    TransactionList transactions = dataReader.readTransactions(input);
-
-    Algorithm algorithm = Algorithm(config);
-    algorithm.run(transactions);
+    Algorithm(config).run(DataReader().readTransactions(input));
 
     return (int) InputErrorReturnCode::Success;
 }
