@@ -31,11 +31,11 @@ IdListItemSets FrequentItemsCalculator::oneFrequentItems(IdListItemSets &allItem
     return oneFrequentItems;
 }
 
-ExtendedIdListItemSetList FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
-    ExtendedIdListItemSetList extendedItemSets;
+ExtendedIdListItemSetVector FrequentItemsCalculator::twoFrequentItems(IdListSequenceSets idListSequenceSets) {
+    ExtendedIdListItemSetVector extendedItemSets;
 
     for (const IdListSequenceSetPtr &sequenceSetPtr : idListSequenceSets) {
-        ExtendedIdListItemSetList innerItemSets;
+        ExtendedIdListItemSetVector innerItemSets;
         ItemSetEventPairs const &pairs = sequenceSetPtr->pairs();
         SequenceID const &sequenceID = sequenceSetPtr->sequenceID();
 
@@ -88,7 +88,7 @@ ExtendedIdListItemSetList FrequentItemsCalculator::twoFrequentItems(IdListSequen
     return extendedItemSets;
 }
 
-void FrequentItemsCalculator::sort(ExtendedIdListItemSetList &list) {
+void FrequentItemsCalculator::sort(ExtendedIdListItemSetVector &list) {
     auto maxItemSetIt = ::max_element(begin(list), end(list), [](const ExtendedIdListItemSet &a, const ExtendedIdListItemSet &b) {
         return a.atomSets().size() < b.atomSets().size();
     });
@@ -110,42 +110,48 @@ void FrequentItemsCalculator::sort(ExtendedIdListItemSetList &list) {
     });
 }
 
-void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetList sequences) {
-    ExtendedIdListItemSetList newSequences;
-    for (int i = 0; i < sequences.size(); ++i) {
-        ExtendedIdListItemSet idListItemSet = sequences[i];
-        for (int j = i + 1; j < sequences.size(); ++j) {
-            ExtendedIdListItemSet innerIdListItemSet = sequences[j];
-            ExtendedIdListItemSetList joinedIdListItemSetList = temporalJoin(idListItemSet, innerIdListItemSet);
+void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetVector sequences) {
+    ExtendedIdListItemSetSet newSequences;
+    for (auto i = begin(sequences); i != end(sequences); ++i) {
+        ExtendedIdListItemSet idListItemSet = *i;
+        for (auto j = i + 1; j != end(sequences); ++j) {
+            ExtendedIdListItemSet innerIdListItemSet = *j;
+            ExtendedIdListItemSetVector joinedIdListItemSetList = temporalJoin(idListItemSet, innerIdListItemSet);
             bool noJoinPerformed = joinedIdListItemSetList.empty();
             if (noJoinPerformed) {
                 continue;
             }
             for (ExtendedIdListItemSet joinedIdListItemSet : joinedIdListItemSetList) {
                 if (joinedIdListItemSet.support >= this->_minSupport) {
-                    newSequences.push_back(joinedIdListItemSet);
+                    auto itemSetIt = newSequences.find(joinedIdListItemSet);
+                    if (itemSetIt != end(newSequences) &&
+                            itemSetIt->sequenceEventPairs.size() < joinedIdListItemSet.sequenceEventPairs.size()) {
+                        newSequences.erase(itemSetIt);
+                    }
+                    newSequences.insert(joinedIdListItemSet);
                 }
             }
         }
     }
     if (!newSequences.empty()) {
-        cout << newSequences[0].numberOfAtoms() << " frequent items (" << newSequences.size() << "):" << endl;
-        if (newSequences[0].numberOfAtoms() >= this->_minSupport) {
+        cout << newSequences.begin()->numberOfAtoms() << " frequent items (" << newSequences.size() << "):" << endl;
+        if (newSequences.begin()->numberOfAtoms() >= this->_minSupport) {
             for (auto item : newSequences) {
                 cout << item << endl;
             }
         }
         // BFS
-        enumerateFrequentSequences(newSequences);
+        ExtendedIdListItemSetVector newSequencesVector = ExtendedIdListItemSetVector(begin(newSequences), end(newSequences));
+        enumerateFrequentSequences(newSequencesVector);
     }
 }
 
-ExtendedIdListItemSetList FrequentItemsCalculator::temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second) {
+ExtendedIdListItemSetVector FrequentItemsCalculator::temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second) {
     if (first.numberOfAtoms() != second.numberOfAtoms()) {
-        return ExtendedIdListItemSetList();
+        return ExtendedIdListItemSetVector();
     }
 
-    ExtendedIdListItemSetList joinedItemSetList;
+    ExtendedIdListItemSetVector joinedItemSetList;
 
     if (first.hasEqualElementsExcludingLast(second)) {
         ExtendedIdListItemSet firstSecond(first.atomSets());

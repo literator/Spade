@@ -17,7 +17,7 @@ int Application::run() {
     char **argv = this->_argv;
 
     InputReader input;
-    OutputWriter output;
+//    OutputWriter output;
     Config config;
 
     InputProcessor processor = new InputProcessor();
@@ -30,9 +30,9 @@ int Application::run() {
         input.openFile(string(argv[1]));
     }, InputErrorReturnCode::OpeningInputFile));
 
-    processor.addStep(new InputTryCatchProcessStep([&]() {
-        output.openFile(string(argv[2]));
-    }, InputErrorReturnCode::OpeningOutputFile));
+//    processor.addStep(new InputTryCatchProcessStep([&]() {
+//        output.openFile(string(argv[2]));
+//    }, InputErrorReturnCode::OpeningOutputFile));
 
     processor.addStep(new InputTryCatchProcessStep([&]() {
         ConfigReader cr = ConfigReader::getInstance();

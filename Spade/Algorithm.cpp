@@ -25,7 +25,7 @@ void Algorithm::run(TransactionList transactions) {
 
     IdListSequenceSets idListSequenceSets = converter.convertVerticalToHorizontal(oneFrequentItems);
 
-    ExtendedIdListItemSetList twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
+    ExtendedIdListItemSetVector twoFrequentItems = fiCalculator.twoFrequentItems(idListSequenceSets);
 
     fiCalculator.sort(twoFrequentItems);
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <set>
 #include "../Types.h"
 #include "AtomSet.h"
 
@@ -8,7 +9,8 @@ using namespace std;
 
 class ExtendedIdListItemSet;
 
-typedef vector<ExtendedIdListItemSet> ExtendedIdListItemSetList;
+typedef vector<ExtendedIdListItemSet> ExtendedIdListItemSetVector;
+typedef set<ExtendedIdListItemSet> ExtendedIdListItemSetSet;
 
 typedef map<SequenceID, vector<EventID>> SequenceEventMap;
 
@@ -71,8 +73,8 @@ public:
         return !(*this == extendedIdListItemSet);
     }
 
-    bool operator<(const ExtendedIdListItemSet *extendedIdListItemSet) const {
-        return _atomSets < extendedIdListItemSet->_atomSets;
+    bool operator<(const ExtendedIdListItemSet extendedIdListItemSet) const {
+        return _atomSets < extendedIdListItemSet._atomSets;
     }
 
     friend ostream &operator<<(ostream &os, const ExtendedIdListItemSet &idListItemSet) {

@@ -9,11 +9,11 @@ class FrequentItemsCalculator {
 private:
     unsigned int _minSupport;
 
-    ExtendedIdListItemSetList temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second);
+    ExtendedIdListItemSetVector temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second);
 public:
     FrequentItemsCalculator(unsigned int minSupport);
     IdListItemSets oneFrequentItems(IdListItemSets &allItems);
-    ExtendedIdListItemSetList twoFrequentItems(IdListSequenceSets idListSequenceSets);
-    void enumerateFrequentSequences(ExtendedIdListItemSetList sequences);
-    void sort(ExtendedIdListItemSetList &list);
+    ExtendedIdListItemSetVector twoFrequentItems(IdListSequenceSets idListSequenceSets);
+    void enumerateFrequentSequences(ExtendedIdListItemSetVector sequences);
+    void sort(ExtendedIdListItemSetVector &list);
 };
