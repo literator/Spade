@@ -10,6 +10,8 @@ private:
     unsigned int _minSupport;
 
     ExtendedIdListItemSetVector temporalJoin(ExtendedIdListItemSet &first, ExtendedIdListItemSet &second);
+    bool prune(ExtendedIdListItemSet idListItemSet, ExtendedIdListItemSetVector sequences);
+    ExtendedIdListItemSetVector subsets(ExtendedIdListItemSet idListItemSet);
 public:
     FrequentItemsCalculator(unsigned int minSupport);
     IdListItemSets oneFrequentItems(IdListItemSets &allItems);

@@ -122,7 +122,7 @@ void FrequentItemsCalculator::enumerateFrequentSequences(ExtendedIdListItemSetVe
                 continue;
             }
             for (ExtendedIdListItemSet joinedIdListItemSet : joinedIdListItemSetList) {
-                if (joinedIdListItemSet.support >= this->_minSupport) {
+                if (!prune(joinedIdListItemSet, sequences) || joinedIdListItemSet.support >= this->_minSupport) {
                     auto itemSetIt = newSequences.find(joinedIdListItemSet);
                     if (itemSetIt != end(newSequences) &&
                             itemSetIt->sequenceEventPairs.size() < joinedIdListItemSet.sequenceEventPairs.size()) {
@@ -205,3 +205,13 @@ ExtendedIdListItemSetVector FrequentItemsCalculator::temporalJoin(ExtendedIdList
     return joinedItemSetList;
 }
 
+bool FrequentItemsCalculator::prune(ExtendedIdListItemSet idListItemSet, ExtendedIdListItemSetVector sequences) {
+    ExtendedIdListItemSetVector k_1Sequences = idListItemSet.subSequences();
+    for (auto itemSet : k_1Sequences) {
+        auto equalItemSet = find(begin(sequences), end(sequences), itemSet);
+        if (equalItemSet == end(sequences) || equalItemSet->support < this->_minSupport) {
+            return true;
+        }
+    }
+    return false;
+}

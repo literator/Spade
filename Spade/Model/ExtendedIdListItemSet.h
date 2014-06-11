@@ -47,6 +47,10 @@ public:
         _atomSets.push_back(atomSet);
     }
 
+    void addAtomToAtomSetAtIndex(Atom atom, int index) {
+        _atomSets[index].addAtom(atom);
+    }
+
     void addAtomToLastAtomSet(Atom atom) {
         _atomSets.back().addAtom(atom);
     }
@@ -89,4 +93,5 @@ public:
     }
 
     void addAtomToTheLatestAtomSet(Atom atom);
+    ExtendedIdListItemSetVector subSequences();
 };

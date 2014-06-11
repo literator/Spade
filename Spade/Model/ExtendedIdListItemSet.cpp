@@ -1,5 +1,4 @@
 #include "ExtendedIdListItemSet.h"
-#include <set>
 
 ExtendedIdListItemSet::ExtendedIdListItemSet(unsigned int support)
         : _atomSets(AtomSetList()), support(support), sequenceEventPairs(SequenceEventPairs()) {
@@ -104,4 +103,34 @@ SequenceEventMap ExtendedIdListItemSet::sequenceEventMap() const {
     }
 
     return map;
+}
+
+ExtendedIdListItemSetVector ExtendedIdListItemSet::subSequences() {
+    ExtendedIdListItemSetVector subSequences;
+    AtomList atomsFlattened = allAtomsFlattened();
+    for (int i = 0; i < atomsFlattened.size(); ++i) {
+        AtomList atomList;
+        int o = i + 1;
+        for (int j = 0; j < atomsFlattened.size(); ++j) {
+            if (j != o) {
+                atomList.push_back(atomsFlattened[j]);
+            }
+        }
+
+        ExtendedIdListItemSet subItemSet;
+        for (auto atom : atomList) {
+            auto atomSetIt = find_if(begin(_atomSets), end(_atomSets), [&atom](AtomSet atomSet) {
+                return find(begin(atomSet.atoms()), end(atomSet.atoms()), atom) != end(atomSet.atoms());
+            });
+            int index = std::distance(begin(_atomSets), atomSetIt);
+            if (index < subItemSet.atomSets().size()) {
+                subItemSet.addAtomToAtomSetAtIndex(atom, index);
+            } else {
+                subItemSet.addAtomSet(AtomSet(atom));
+            }
+        }
+        subSequences.push_back(subItemSet);
+    }
+
+    return subSequences;
 }
